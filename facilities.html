@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RAN's CAB - Facilities</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+  <!-- ================= NAVBAR ================= -->
+
+  <nav class="bg-gray-900 text-white sticky top-0 z-50 shadow-lg">
+  
+  <div class="max-w-7xl mx-auto px-4 py-5 flex justify-between items-center">
+  
+  <a href="index.html" class="text-3xl font-bold">
+  <i class="fa-solid fa-taxi text-yellow-400"></i> RAN's CAB
+  </a>
+  
+  <div class="hidden md:flex space-x-8 items-center text-lg">
+  <a href="index.html" class="hover:text-yellow-400 transition">Home</a>
+  <a href="cars.html" class="hover:text-yellow-400 transition">Cars</a>
+  <a href="facilities.html" class="text-yellow-400 font-bold">Facilities</a>
+  <a href="contact.html" class="hover:text-yellow-400 transition">Contact</a>
+  <a href="about.html" class="hover:text-yellow-400 transition">About Us</a>
+  </div>
+  
+  <button id="menuButton" class="md:hidden text-2xl">
+  <i class="fa-solid fa-bars"></i>
+  </button>
+  
+  </div>
+  
+  <div id="mobileMenu" class="mobile-menu hidden md:hidden bg-gray-800 px-5 pb-5">
+  <a href="index.html" class="block py-3 hover:text-yellow-400">Home</a>
+  <a href="cars.html" class="block py-3 hover:text-yellow-400">Cars</a>
+  <a href="facilities.html" class="block py-3 text-yellow-400">Facilities</a>
+  <a href="contact.html" class="block py-3 hover:text-yellow-400">Contact</a>
+  <a href="about.html" class="block py-3 hover:text-yellow-400">About Us</a>
+  </div>
+  
+  </nav>
+
+<!-- Page Header -->
+<section class="bg-yellow-400 py-12">
+<div class="max-w-7xl mx-auto px-4 text-center">
+<h2 class="text-4xl font-bold text-gray-900">Our Facilities</h2>
+<p class="mt-3 text-gray-800 text-lg">Everything you need for a safe, comfortable and convenient journey</p>
+</div>
+</section>
+
+<!-- Facilities Section -->
+<section class="max-w-7xl mx-auto py-12 px-4">
+
+<!-- Heading -->
+<h3 class="text-center text-3xl font-bold">Facilities We Provide</h3>
+<div class="w-24 h-1 bg-gray-900 mx-auto my-3"></div>
+<p class="text-center mt-3 text-gray-600 max-w-2xl mx-auto">RAN's CAB provides reliable facilities designed to make every journey comfortable, convenient and stress-free.</p>
+
+<!-- Search and Filter -->
+<div class="bg-white rounded-2xl shadow-lg p-5 mt-10 mb-10">
+<div class="grid md:grid-cols-2 gap-4">
+<div class="relative">
+<i class="fa-solid fa-magnifying-glass absolute left-4 top-4 text-gray-400"></i>
+<input type="text" id="searchFacility" onkeyup="filterFacilities()" placeholder="Search facility..." class="w-full border border-gray-300 rounded-lg p-3 pl-11 outline-none focus:ring-2 focus:ring-yellow-400">
+</div>
+<select id="categoryFilter" onchange="filterFacilities()" class="border border-gray-300 rounded-lg p-3 outline-none focus:ring-2 focus:ring-yellow-400">
+<option value="all">All Facilities</option>
+<option value="Travel">Travel</option>
+<option value="Safety">Safety</option>
+<option value="Comfort">Comfort</option>
+<option value="Support">Support</option>
+</select>
+</div>
+</div>
+
+<!-- Facility Cards -->
+<div id="facilityContainer" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+
+<!-- Facility 1 -->
+<div class="facility-card bg-white rounded-xl shadow-md p-6 border-t-4 border-gray-900 hover:border-yellow-400 hover:shadow-xl hover:-translate-y-1 transition duration-300" data-name="Air Conditioning" data-category="Comfort">
+<div class="flex items-center gap-4 mb-4">
+<div class="w-14 h-14 rounded-full bg-yellow-100 flex items-center justify-center">
+<i class="fa-solid fa-snowflake text-2xl text-yellow-500"></i>
+</div>
+<h5 class="text-xl font-semibold">Air Conditioning</h5>
+</div>
+<p class="text-gray-600 text-sm mb-5">Enjoy a cool and comfortable journey with fully air-conditioned vehicles.</p>
+<button onclick="openFacilityModal('Air Conditioning','Enjoy a cool and comfortable journey with fully air-conditioned vehicles.','fa-snowflake')" class="text-yellow-600 font-semibold hover:text-yellow-700">View Details <i class="fa-solid fa-arrow-right ml-1"></i></button>
+</div>
+
+<!-- Facility 2 -->
+<div class="facility-card bg-white rounded-xl shadow-md p-6 border-t-4 border-gray-900 hover:border-yellow-400 hover:shadow-xl hover:-translate-y-1 transition duration-300" data-name="GPS Navigation" data-category="Travel">
+<div class="flex items-center gap-4 mb-4">
+<div class="w-14 h-14 rounded-full bg-yellow-100 flex items-center justify-center">
+<i class="fa-solid fa-location-crosshairs text-2xl text-yellow-500"></i>
+</div>
+<h5 class="text-xl font-semibold">GPS Navigation</h5>
+</div>
+<p class="text-gray-600 text-sm mb-5">Reach your destination easily with accurate route and navigation support.</p>
+<button onclick="openFacilityModal('GPS Navigation','Reach your destination easily with accurate route and navigation support.','fa-location-crosshairs')" class="text-yellow-600 font-semibold hover:text-yellow-700">View Details <i class="fa-solid fa-arrow-right ml-1"></i></button>
+</div>
+
+<!-- Facility 3 -->
+<div class="facility-card bg-white rounded-xl shadow-md p-6 border-t-4 border-gray-900 hover:border-yellow-400 hover:shadow-xl hover:-translate-y-1 transition duration-300" data-name="Professional Drivers" data-category="Safety">
+<div class="flex items-center gap-4 mb-4">
+<div class="w-14 h-14 rounded-full bg-yellow-100 flex items-center justify-center">
+<i class="fa-solid fa-user-tie text-2xl text-yellow-500"></i>
+</div>
+<h5 class="text-xl font-semibold">Professional Drivers</h5>
+</div>
+<p class="text-gray-600 text-sm mb-5">Experienced and responsible drivers focused on providing a safe journey.</p>
+<button onclick="openFacilityModal('Professional Drivers','Experienced and responsible drivers focused on providing a safe journey.','fa-user-tie')" class="text-yellow-600 font-semibold hover:text-yellow-700">View Details <i class="fa-solid fa-arrow-right ml-1"></i></button>
+</div>
+
+<!-- Facility 4 -->
+<div class="facility-card bg-white rounded-xl shadow-md p-6 border-t-4 border-gray-900 hover:border-yellow-400 hover:shadow-xl hover:-translate-y-1 transition duration-300" data-name="24/7 Customer Support" data-category="Support">
+<div class="flex items-center gap-4 mb-4">
+<div class="w-14 h-14 rounded-full bg-yellow-100 flex items-center justify-center">
+<i class="fa-solid fa-headset text-2xl text-yellow-500"></i>
+</div>
+<h5 class="text-xl font-semibold">24/7 Customer Support</h5>
+</div>
+<p class="text-gray-600 text-sm mb-5">Our support team is available to assist you whenever you need help.</p>
+<button onclick="openFacilityModal('24/7 Customer Support','Our support team is available to assist you whenever you need help.','fa-headset')" class="text-yellow-600 font-semibold hover:text-yellow-700">View Details <i class="fa-solid fa-arrow-right ml-1"></i></button>
+</div>
+
+<!-- Facility 5 -->
+<div class="facility-card bg-white rounded-xl shadow-md p-6 border-t-4 border-gray-900 hover:border-yellow-400 hover:shadow-xl hover:-translate-y-1 transition duration-300" data-name="Well Maintained Cars" data-category="Safety">
+<div class="flex items-center gap-4 mb-4">
+<div class="w-14 h-14 rounded-full bg-yellow-100 flex items-center justify-center">
+<i class="fa-solid fa-car text-2xl text-yellow-500"></i>
+</div>
+<h5 class="text-xl font-semibold">Well Maintained Cars</h5>
+</div>
+<p class="text-gray-600 text-sm mb-5">Our vehicles are regularly maintained to provide a dependable travel experience.</p>
+<button onclick="openFacilityModal('Well Maintained Cars','Our vehicles are regularly maintained to provide a dependable travel experience.','fa-car')" class="text-yellow-600 font-semibold hover:text-yellow-700">View Details <i class="fa-solid fa-arrow-right ml-1"></i></button>
+</div>
+
+<!-- Facility 6 -->
+<div class="facility-card bg-white rounded-xl shadow-md p-6 border-t-4 border-gray-900 hover:border-yellow-400 hover:shadow-xl hover:-translate-y-1 transition duration-300" data-name="Comfortable Seating" data-category="Comfort">
+<div class="flex items-center gap-4 mb-4">
+<div class="w-14 h-14 rounded-full bg-yellow-100 flex items-center justify-center">
+<i class="fa-solid fa-couch text-2xl text-yellow-500"></i>
+</div>
+<h5 class="text-xl font-semibold">Comfortable Seating</h5>
+</div>
+<p class="text-gray-600 text-sm mb-5">Comfortable interiors and spacious seating make long journeys more enjoyable.</p>
+<button onclick="openFacilityModal('Comfortable Seating','Comfortable interiors and spacious seating make long journeys more enjoyable.','fa-couch')" class="text-yellow-600 font-semibold hover:text-yellow-700">View Details <i class="fa-solid fa-arrow-right ml-1"></i></button>
+</div>
+
+<!-- Facility 7 -->
+<div class="facility-card bg-white rounded-xl shadow-md p-6 border-t-4 border-gray-900 hover:border-yellow-400 hover:shadow-xl hover:-translate-y-1 transition duration-300" data-name="Airport Transfer" data-category="Travel">
+<div class="flex items-center gap-4 mb-4">
+<div class="w-14 h-14 rounded-full bg-yellow-100 flex items-center justify-center">
+<i class="fa-solid fa-plane-departure text-2xl text-yellow-500"></i>
+</div>
+<h5 class="text-xl font-semibold">Airport Transfer</h5>
+</div>
+<p class="text-gray-600 text-sm mb-5">Convenient pickup and drop services for airport travel and transfers.</p>
+<button onclick="openFacilityModal('Airport Transfer','Convenient pickup and drop services for airport travel and transfers.','fa-plane-departure')" class="text-yellow-600 font-semibold hover:text-yellow-700">View Details <i class="fa-solid fa-arrow-right ml-1"></i></button>
+</div>
+
+<!-- Facility 8 -->
+<div class="facility-card bg-white rounded-xl shadow-md p-6 border-t-4 border-gray-900 hover:border-yellow-400 hover:shadow-xl hover:-translate-y-1 transition duration-300" data-name="Long Distance Trips" data-category="Travel">
+<div class="flex items-center gap-4 mb-4">
+<div class="w-14 h-14 rounded-full bg-yellow-100 flex items-center justify-center">
+<i class="fa-solid fa-road text-2xl text-yellow-500"></i>
+</div>
+<h5 class="text-xl font-semibold">Long Distance Trips</h5>
+</div>
+<p class="text-gray-600 text-sm mb-5">Travel comfortably between cities with reliable vehicles for long journeys.</p>
+<button onclick="openFacilityModal('Long Distance Trips','Travel comfortably between cities with reliable vehicles for long journeys.','fa-road')" class="text-yellow-600 font-semibold hover:text-yellow-700">View Details <i class="fa-solid fa-arrow-right ml-1"></i></button>
+</div>
+
+<!-- Facility 9 -->
+<div class="facility-card bg-white rounded-xl shadow-md p-6 border-t-4 border-gray-900 hover:border-yellow-400 hover:shadow-xl hover:-translate-y-1 transition duration-300" data-name="Easy Booking" data-category="Support">
+<div class="flex items-center gap-4 mb-4">
+<div class="w-14 h-14 rounded-full bg-yellow-100 flex items-center justify-center">
+<i class="fa-solid fa-calendar-check text-2xl text-yellow-500"></i>
+</div>
+<h5 class="text-xl font-semibold">Easy Booking</h5>
+</div>
+<p class="text-gray-600 text-sm mb-5">Book your preferred car quickly and conveniently through our booking system.</p>
+<button onclick="openFacilityModal('Easy Booking','Book your preferred car quickly and conveniently through our booking system.','fa-calendar-check')" class="text-yellow-600 font-semibold hover:text-yellow-700">View Details <i class="fa-solid fa-arrow-right ml-1"></i></button>
+</div>
+
+</div>
+
+<p id="noFacilities" class="hidden text-center text-gray-500 text-lg py-10">No facilities found matching your search.</p>
+
+</section>
+
+<!-- Why Choose Us -->
+<section class="bg-white py-12">
+<div class="max-w-7xl mx-auto px-4">
+<h3 class="text-center text-2xl font-bold">Why Choose RAN's CAB?</h3>
+<div class="w-24 h-1 bg-gray-900 mx-auto my-3"></div>
+<div class="grid md:grid-cols-4 gap-6 mt-8">
+
+<div class="text-center p-6 rounded-xl shadow-md hover:shadow-xl transition">
+<i class="fa-solid fa-shield-halved text-4xl text-yellow-500 mb-4"></i>
+<h4 class="font-bold text-lg">Safe & Reliable</h4>
+<p class="text-gray-600 mt-2">Well-maintained vehicles and responsible service.</p>
+</div>
+
+<div class="text-center p-6 rounded-xl shadow-md hover:shadow-xl transition">
+<i class="fa-solid fa-indian-rupee-sign text-4xl text-yellow-500 mb-4"></i>
+<h4 class="font-bold text-lg">Affordable Prices</h4>
+<p class="text-gray-600 mt-2">Comfortable rides at competitive prices.</p>
+</div>
+
+<div class="text-center p-6 rounded-xl shadow-md hover:shadow-xl transition">
+<i class="fa-solid fa-headset text-4xl text-yellow-500 mb-4"></i>
+<h4 class="font-bold text-lg">24/7 Support</h4>
+<p class="text-gray-600 mt-2">Get assistance whenever you need it.</p>
+</div>
+
+<div class="text-center p-6 rounded-xl shadow-md hover:shadow-xl transition">
+<i class="fa-solid fa-car-side text-4xl text-yellow-500 mb-4"></i>
+<h4 class="font-bold text-lg">Multiple Options</h4>
+<p class="text-gray-600 mt-2">Choose a vehicle that fits your journey.</p>
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- Call To Action -->
+<section class="bg-gray-900 text-white py-12">
+<div class="max-w-5xl mx-auto px-4 text-center">
+<i class="fa-solid fa-car-side text-yellow-400 text-5xl mb-5"></i>
+<h2 class="text-3xl md:text-4xl font-bold">Ready to Start Your Journey?</h2>
+<p class="text-gray-300 mt-3 mb-6">Choose your car and book your comfortable ride with RAN's CAB.</p>
+<div class="flex flex-col sm:flex-row justify-center gap-4">
+<a href="cars.html" class="bg-yellow-400 hover:bg-yellow-500 text-gray-900 px-7 py-3 rounded-lg font-bold transition">
+<i class="fa-solid fa-car mr-2"></i>View Cars
+</a>
+<a href="contact.html" class="border border-white hover:bg-white hover:text-gray-900 px-7 py-3 rounded-lg font-bold transition">
+<i class="fa-solid fa-phone mr-2"></i>Contact Us
+</a>
+</div>
+</div>
+</section>
+
+<!-- Facility Details Modal -->
+<div id="facilityModal" class="fixed inset-0 bg-black bg-opacity-60 hidden items-center justify-center z-50 p-4">
+<div class="bg-white w-full max-w-lg rounded-2xl shadow-2xl overflow-hidden">
+
+<div class="bg-gray-900 text-white p-5 flex justify-between items-center">
+<h2 id="modalTitle" class="text-xl font-bold"></h2>
+<button onclick="closeFacilityModal()" class="text-gray-300 hover:text-yellow-400 text-2xl">✕</button>
+</div>
+
+<div class="p-7 text-center">
+<div class="w-20 h-20 mx-auto rounded-full bg-yellow-100 flex items-center justify-center mb-5">
+<i id="modalIcon" class="text-4xl text-yellow-500"></i>
+</div>
+
+<h3 id="modalHeading" class="text-2xl font-bold mb-3"></h3>
+<p id="modalDescription" class="text-gray-600 leading-relaxed"></p>
+
+<div class="mt-6 flex flex-col sm:flex-row gap-3">
+<a href="cars.html" class="bg-yellow-400 hover:bg-yellow-500 text-gray-900 px-6 py-3 rounded-lg font-bold transition">
+<i class="fa-solid fa-car mr-2"></i>Book a Car
+</a>
+<a href="contact.html" class="bg-gray-900 hover:bg-gray-700 text-white px-6 py-3 rounded-lg font-bold transition">
+<i class="fa-solid fa-envelope mr-2"></i>Contact Us
+</a>
+</div>
+</div>
+
+</div>
+</div>
+
+<!-- Back To Top -->
+<button onclick="window.scrollTo({top:0,behavior:'smooth'})" class="fixed bottom-6 left-6 w-12 h-12 bg-gray-900 hover:bg-gray-700 text-white rounded-full shadow-lg z-50" title="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
+
+<!-- ================= FOOTER ================= -->
+
+<footer class="bg-yellow-400 mt-10">
+
+<div class="max-w-7xl mx-auto px-6 py-12 grid md:grid-cols-3 gap-10">
+
+<div>
+
+<h3 class="text-2xl font-bold mb-4">
+<i class="fa-solid fa-taxi mr-2"></i>RAN's CAB
+</h3>
+
+<p class="text-gray-700">
+Your reliable cab rental service in Pune. Book comfortable and affordable cars for local, outstation and airport journeys.
+</p>
+
+<h4 class="text-lg font-bold mt-4">Follow Us</h4>
+<div class="flex gap-4 mt-3">
+
+<a href="#" class="text-2xl hover:text-blue-600">
+<i class="fa-brands fa-facebook"></i>
+</a>
+
+<a href="#" class="text-2xl hover:text-pink-600">
+<i class="fa-brands fa-instagram"></i>
+</a>
+
+<a href="#" class="text-2xl hover:text-blue-500">
+<i class="fa-brands fa-twitter"></i>
+</a>
+
+</div>
+
+</div>
+
+<div>
+
+<h4 class="text-lg font-bold mb-4">Quick Links</h4>
+
+<div class="flex flex-col space-y-3">
+
+<a href="index.html" class="hover:text-blue-600">Home</a>
+<a href="cars.html" class="hover:text-blue-600">Cars</a>
+<a href="facilities.html" class="hover:text-blue-600">Facilities</a>
+<a href="contact.html" class="hover:text-blue-600">Contact Us</a>
+<a href="about.html" class="hover:text-blue-600">About Us</a>
+
+</div>
+
+</div>
+
+<div>
+
+<h4 class="text-lg font-bold mb-4">Contact Us</h4>
+
+<p class="mb-3">
+<i class="fa-solid fa-phone mr-2"></i>
+<a href="tel:+919579645381">+91 9579645381</a>
+</p>
+
+<p class="mb-3">
+<i class="fa-solid fa-phone mr-2"></i>
+<a href="tel:+917020310485">+91 7020310485</a>
+</p>
+
+<p class="mb-3">
+<i class="fa-solid fa-envelope mr-2"></i>
+services@ranacab.com
+</p>
+
+<p>
+<i class="fa-solid fa-location-dot mr-2"></i>
+Gold County, Charholi, Pune, Maharashtra
+</p>
+
+</div>
+
+</div>
+
+<div class="bg-gray-900 text-white text-center py-4">
+© RAN's CAB Limited 2026. All Rights Reserved.
+</div>
+
+</footer>
+
+<!-- Floating Buttons -->
+<div class="fixed right-5 bottom-5 flex flex-col gap-3 z-40">
+<a href="tel:+919579645381" class="w-14 h-14 rounded-full bg-blue-600 text-white flex items-center justify-center text-2xl shadow-lg hover:scale-110 transition" aria-label="Call Us">
+<i class="fa-solid fa-phone"></i>
+</a>
+<a href="https://wa.me/919579645381" target="_blank" class="w-14 h-14 rounded-full bg-green-500 text-white flex items-center justify-center text-2xl shadow-lg hover:scale-110 transition" aria-label="WhatsApp">
+<i class="fa-brands fa-whatsapp"></i>
+</a>
+</div>
+
+<script>
+
+/* MOBILE MENU */
+
+document.getElementById("menuButton").addEventListener("click", function() {
+document.getElementById("mobileMenu").classList.toggle("hidden");
+});
+
+function filterFacilities(){
+let search=document.getElementById("searchFacility").value.toLowerCase();
+let category=document.getElementById("categoryFilter").value;
+let facilities=document.querySelectorAll(".facility-card");
+let visible=0;
+
+facilities.forEach(function(facility){
+let name=facility.dataset.name.toLowerCase();
+let facilityCategory=facility.dataset.category;
+let matchName=name.includes(search);
+let matchCategory=category==="all"||facilityCategory===category;
+
+if(matchName&&matchCategory){
+facility.style.display="block";
+visible++;
+}else{
+facility.style.display="none";
+}
+});
+
+document.getElementById("noFacilities").classList.toggle("hidden",visible!==0);
+}
+
+function openFacilityModal(title,description,icon){
+document.getElementById("facilityModal").classList.remove("hidden");
+document.getElementById("facilityModal").classList.add("flex");
+document.getElementById("modalTitle").innerText=title;
+document.getElementById("modalHeading").innerText=title;
+document.getElementById("modalDescription").innerText=description;
+document.getElementById("modalIcon").className="fa-solid "+icon+" text-4xl text-yellow-500";
+document.body.classList.add("overflow-hidden");
+}
+
+function closeFacilityModal(){
+document.getElementById("facilityModal").classList.add("hidden");
+document.getElementById("facilityModal").classList.remove("flex");
+document.body.classList.remove("overflow-hidden");
+}
+
+function subscribeUser(event){
+event.preventDefault();
+let email=document.getElementById("subscribeEmail").value;
+alert("Thank you for subscribing!\n\nSubscription email: "+email);
+document.getElementById("subscribeEmail").value="";
+}
+
+document.getElementById("facilityModal").addEventListener("click",function(event){
+if(event.target===this){
+closeFacilityModal();
+}
+});
+
+document.addEventListener("keydown",function(event){
+if(event.key==="Escape"){
+closeFacilityModal();
+}
+});
+
+</script>
+
+</body>
+</html>

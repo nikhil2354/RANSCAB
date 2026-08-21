@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RAN's CAB - Cars</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+    <!-- ================= NAVBAR ================= -->
+
+    <nav class="bg-gray-900 text-white sticky top-0 z-50 shadow-lg">
+    
+    <div class="max-w-7xl mx-auto px-4 py-5 flex justify-between items-center">
+    
+    <a href="index.html" class="text-3xl font-bold">
+    <i class="fa-solid fa-taxi text-yellow-400"></i> RAN's CAB
+    </a>
+    
+    <div class="hidden md:flex space-x-8 items-center text-lg">
+    <a href="index.html" class="hover:text-yellow-400 transition">Home</a>
+    <a href="cars.html" class="text-yellow-400 font-bold">Cars</a>
+    <a href="facilities.html" class="hover:text-yellow-400 transition">Facilities</a>
+    <a href="contact.html" class="hover:text-yellow-400 transition">Contact</a>
+    <a href="about.html" class="hover:text-yellow-400 transition">About Us</a>
+    </div>
+    
+    <button id="menuButton" class="md:hidden text-2xl">
+    <i class="fa-solid fa-bars"></i>
+    </button>
+    
+    </div>
+    
+    <div id="mobileMenu" class="mobile-menu hidden md:hidden bg-gray-800 px-5 pb-5">
+    <a href="index.html" class="block py-3 hover:text-yellow-400">Home</a>
+    <a href="cars.html" class="block py-3 text-yellow-400">Cars</a>
+    <a href="facilities.html" class="block py-3 hover:text-yellow-400">Facilities</a>
+    <a href="contact.html" class="block py-3 hover:text-yellow-400">Contact</a>
+    <a href="about.html" class="block py-3 hover:text-yellow-400">About Us</a>
+    </div>
+    
+    </nav>
+
+<!-- Page Header -->
+<section class="bg-yellow-400 py-12">
+<div class="max-w-7xl mx-auto px-4 text-center">
+<h2 class="text-4xl font-bold text-gray-900">Choose Your Perfect Ride</h2>
+<p class="mt-3 text-gray-800 text-lg">Comfortable, reliable and affordable cars for every journey</p>
+</div>
+</section>
+
+<!-- Cars Section -->
+<section class="max-w-7xl mx-auto py-12 px-4">
+
+<!-- Search and Filter -->
+<div class="bg-white rounded-2xl shadow-lg p-5 mb-10">
+<div class="grid md:grid-cols-3 gap-4">
+<div class="relative">
+<i class="fa-solid fa-magnifying-glass absolute left-4 top-4 text-gray-400"></i>
+<input type="text" id="searchCar" onkeyup="filterCars()" placeholder="Search car..." class="w-full border border-gray-300 rounded-lg p-3 pl-11 outline-none focus:ring-2 focus:ring-yellow-400">
+</div>
+<select id="categoryFilter" onchange="filterCars()" class="border border-gray-300 rounded-lg p-3 outline-none focus:ring-2 focus:ring-yellow-400">
+<option value="all">All Categories</option>
+<option value="Hatchback">Hatchback</option>
+<option value="Sedan">Sedan</option>
+<option value="SUV">SUV</option>
+<option value="Luxury">Luxury</option>
+</select>
+<select id="priceSort" onchange="sortCars()" class="border border-gray-300 rounded-lg p-3 outline-none focus:ring-2 focus:ring-yellow-400">
+<option value="default">Sort By</option>
+<option value="low">Price: Low to High</option>
+<option value="high">Price: High to Low</option>
+</select>
+</div>
+</div>
+
+<h3 class="text-center text-2xl font-bold">Available Cars</h3>
+<div class="w-24 h-1 bg-gray-900 mx-auto my-3"></div>
+
+<div id="carsContainer">
+
+<!-- Toyota Corolla -->
+<div class="car-card max-w-6xl mb-6 mx-auto bg-white rounded-3xl shadow-xl overflow-hidden hover:shadow-2xl transition" data-name="Toyota Corolla" data-category="Sedan" data-price="1500">
+<div class="flex flex-col lg:flex-row">
+<div class="lg:w-1/2 p-6 md:p-8 flex items-center justify-center">
+<img src="https://placehold.co/600x400?text=Toyota+Corolla" class="w-full h-80 object-cover rounded-2xl" alt="Toyota Corolla">
+</div>
+<div class="lg:w-1/2 p-6 md:p-8 flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-start gap-3">
+<h5 class="text-3xl font-bold mb-4">Toyota Corolla</h5>
+<span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm font-semibold">Sedan</span>
+</div>
+<p class="text-gray-600 text-lg mb-5">Comfortable sedan with excellent mileage, spacious interior and smooth performance. Perfect for city rides and family trips.</p>
+<div class="grid grid-cols-2 gap-3 mb-5 text-gray-700">
+<span><i class="fa-solid fa-users text-yellow-500 mr-2"></i>5 Seats</span>
+<span><i class="fa-solid fa-snowflake text-yellow-500 mr-2"></i>AC</span>
+<span><i class="fa-solid fa-gas-pump text-yellow-500 mr-2"></i>Petrol</span>
+<span><i class="fa-solid fa-gears text-yellow-500 mr-2"></i>Automatic</span>
+</div>
+<p class="text-3xl font-bold text-gray-900 mb-5">₹1,500 <span class="text-base font-normal text-gray-500">/ day</span></p>
+</div>
+<button onclick="openModal('Toyota Corolla','₹1,500 / day','https://placehold.co/600x400?text=Toyota+Corolla')" class="bg-yellow-400 hover:bg-yellow-500 w-full py-3 rounded-lg font-bold transition"><i class="fa-solid fa-calendar-check mr-2"></i>Book Now</button>
+</div>
+</div>
+</div>
+
+<!-- Honda City -->
+<div class="car-card max-w-6xl mb-6 mx-auto bg-white rounded-3xl shadow-xl overflow-hidden hover:shadow-2xl transition" data-name="Honda City" data-category="Sedan" data-price="1800">
+<div class="flex flex-col lg:flex-row">
+<div class="lg:w-1/2 p-6 md:p-8 flex items-center justify-center">
+<img src="https://placehold.co/600x400?text=Honda+City" class="w-full h-80 object-cover rounded-2xl" alt="Honda City">
+</div>
+<div class="lg:w-1/2 p-6 md:p-8 flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-start gap-3">
+<h5 class="text-3xl font-bold mb-4">Honda City</h5>
+<span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm font-semibold">Sedan</span>
+</div>
+<p class="text-gray-600 text-lg mb-5">Premium sedan offering comfortable seating, refined performance and a smooth driving experience.</p>
+<div class="grid grid-cols-2 gap-3 mb-5 text-gray-700">
+<span><i class="fa-solid fa-users text-yellow-500 mr-2"></i>5 Seats</span>
+<span><i class="fa-solid fa-snowflake text-yellow-500 mr-2"></i>AC</span>
+<span><i class="fa-solid fa-gas-pump text-yellow-500 mr-2"></i>Petrol</span>
+<span><i class="fa-solid fa-gears text-yellow-500 mr-2"></i>Automatic</span>
+</div>
+<p class="text-3xl font-bold text-gray-900 mb-5">₹1,800 <span class="text-base font-normal text-gray-500">/ day</span></p>
+</div>
+<button onclick="openModal('Honda City','₹1,800 / day','https://placehold.co/600x400?text=Honda+City')" class="bg-yellow-400 hover:bg-yellow-500 w-full py-3 rounded-lg font-bold transition"><i class="fa-solid fa-calendar-check mr-2"></i>Book Now</button>
+</div>
+</div>
+</div>
+
+<!-- Hyundai Creta -->
+<div class="car-card max-w-6xl mb-6 mx-auto bg-white rounded-3xl shadow-xl overflow-hidden hover:shadow-2xl transition" data-name="Hyundai Creta" data-category="SUV" data-price="2200">
+<div class="flex flex-col lg:flex-row">
+<div class="lg:w-1/2 p-6 md:p-8 flex items-center justify-center">
+<img src="https://placehold.co/600x400?text=Hyundai+Creta" class="w-full h-80 object-cover rounded-2xl" alt="Hyundai Creta">
+</div>
+<div class="lg:w-1/2 p-6 md:p-8 flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-start gap-3">
+<h5 class="text-3xl font-bold mb-4">Hyundai Creta</h5>
+<span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm font-semibold">SUV</span>
+</div>
+<p class="text-gray-600 text-lg mb-5">Stylish and spacious SUV with comfortable interiors, powerful performance and excellent road presence.</p>
+<div class="grid grid-cols-2 gap-3 mb-5 text-gray-700">
+<span><i class="fa-solid fa-users text-yellow-500 mr-2"></i>5 Seats</span>
+<span><i class="fa-solid fa-snowflake text-yellow-500 mr-2"></i>AC</span>
+<span><i class="fa-solid fa-gas-pump text-yellow-500 mr-2"></i>Petrol</span>
+<span><i class="fa-solid fa-gears text-yellow-500 mr-2"></i>Automatic</span>
+</div>
+<p class="text-3xl font-bold text-gray-900 mb-5">₹2,200 <span class="text-base font-normal text-gray-500">/ day</span></p>
+</div>
+<button onclick="openModal('Hyundai Creta','₹2,200 / day','https://placehold.co/600x400?text=Hyundai+Creta')" class="bg-yellow-400 hover:bg-yellow-500 w-full py-3 rounded-lg font-bold transition"><i class="fa-solid fa-calendar-check mr-2"></i>Book Now</button>
+</div>
+</div>
+</div>
+
+<!-- Kia Seltos -->
+<div class="car-card max-w-6xl mb-6 mx-auto bg-white rounded-3xl shadow-xl overflow-hidden hover:shadow-2xl transition" data-name="Kia Seltos" data-category="SUV" data-price="2300">
+<div class="flex flex-col lg:flex-row">
+<div class="lg:w-1/2 p-6 md:p-8 flex items-center justify-center">
+<img src="https://placehold.co/600x400?text=Kia+Seltos" class="w-full h-80 object-cover rounded-2xl" alt="Kia Seltos">
+</div>
+<div class="lg:w-1/2 p-6 md:p-8 flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-start gap-3">
+<h5 class="text-3xl font-bold mb-4">Kia Seltos</h5>
+<span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm font-semibold">SUV</span>
+</div>
+<p class="text-gray-600 text-lg mb-5">Modern SUV with premium features, spacious cabin and comfortable seating for long journeys.</p>
+<div class="grid grid-cols-2 gap-3 mb-5 text-gray-700">
+<span><i class="fa-solid fa-users text-yellow-500 mr-2"></i>5 Seats</span>
+<span><i class="fa-solid fa-snowflake text-yellow-500 mr-2"></i>AC</span>
+<span><i class="fa-solid fa-gas-pump text-yellow-500 mr-2"></i>Petrol</span>
+<span><i class="fa-solid fa-gears text-yellow-500 mr-2"></i>Automatic</span>
+</div>
+<p class="text-3xl font-bold text-gray-900 mb-5">₹2,300 <span class="text-base font-normal text-gray-500">/ day</span></p>
+</div>
+<button onclick="openModal('Kia Seltos','₹2,300 / day','https://placehold.co/600x400?text=Kia+Seltos')" class="bg-yellow-400 hover:bg-yellow-500 w-full py-3 rounded-lg font-bold transition"><i class="fa-solid fa-calendar-check mr-2"></i>Book Now</button>
+</div>
+</div>
+</div>
+
+<!-- Toyota Innova -->
+<div class="car-card max-w-6xl mb-6 mx-auto bg-white rounded-3xl shadow-xl overflow-hidden hover:shadow-2xl transition" data-name="Toyota Innova" data-category="SUV" data-price="2800">
+<div class="flex flex-col lg:flex-row">
+<div class="lg:w-1/2 p-6 md:p-8 flex items-center justify-center">
+<img src="https://placehold.co/600x400?text=Toyota+Innova" class="w-full h-80 object-cover rounded-2xl" alt="Toyota Innova">
+</div>
+<div class="lg:w-1/2 p-6 md:p-8 flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-start gap-3">
+<h5 class="text-3xl font-bold mb-4">Toyota Innova</h5>
+<span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm font-semibold">SUV</span>
+</div>
+<p class="text-gray-600 text-lg mb-5">Spacious family vehicle with excellent comfort, generous luggage space and reliable performance.</p>
+<div class="grid grid-cols-2 gap-3 mb-5 text-gray-700">
+<span><i class="fa-solid fa-users text-yellow-500 mr-2"></i>7 Seats</span>
+<span><i class="fa-solid fa-snowflake text-yellow-500 mr-2"></i>AC</span>
+<span><i class="fa-solid fa-gas-pump text-yellow-500 mr-2"></i>Diesel</span>
+<span><i class="fa-solid fa-gears text-yellow-500 mr-2"></i>Manual</span>
+</div>
+<p class="text-3xl font-bold text-gray-900 mb-5">₹2,800 <span class="text-base font-normal text-gray-500">/ day</span></p>
+</div>
+<button onclick="openModal('Toyota Innova','₹2,800 / day','https://placehold.co/600x400?text=Toyota+Innova')" class="bg-yellow-400 hover:bg-yellow-500 w-full py-3 rounded-lg font-bold transition"><i class="fa-solid fa-calendar-check mr-2"></i>Book Now</button>
+</div>
+</div>
+</div>
+
+<!-- MG Hector -->
+<div class="car-card max-w-6xl mb-6 mx-auto bg-white rounded-3xl shadow-xl overflow-hidden hover:shadow-2xl transition" data-name="MG Hector" data-category="SUV" data-price="3000">
+<div class="flex flex-col lg:flex-row">
+<div class="lg:w-1/2 p-6 md:p-8 flex items-center justify-center">
+<img src="https://placehold.co/600x400?text=MG+Hector" class="w-full h-80 object-cover rounded-2xl" alt="MG Hector">
+</div>
+<div class="lg:w-1/2 p-6 md:p-8 flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-start gap-3">
+<h5 class="text-3xl font-bold mb-4">MG Hector</h5>
+<span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm font-semibold">SUV</span>
+</div>
+<p class="text-gray-600 text-lg mb-5">Premium SUV with spacious interiors, advanced technology and a comfortable driving experience.</p>
+<div class="grid grid-cols-2 gap-3 mb-5 text-gray-700">
+<span><i class="fa-solid fa-users text-yellow-500 mr-2"></i>5 Seats</span>
+<span><i class="fa-solid fa-snowflake text-yellow-500 mr-2"></i>AC</span>
+<span><i class="fa-solid fa-gas-pump text-yellow-500 mr-2"></i>Petrol</span>
+<span><i class="fa-solid fa-gears text-yellow-500 mr-2"></i>Automatic</span>
+</div>
+<p class="text-3xl font-bold text-gray-900 mb-5">₹3,000 <span class="text-base font-normal text-gray-500">/ day</span></p>
+</div>
+<button onclick="openModal('MG Hector','₹3,000 / day','https://placehold.co/600x400?text=MG+Hector')" class="bg-yellow-400 hover:bg-yellow-500 w-full py-3 rounded-lg font-bold transition"><i class="fa-solid fa-calendar-check mr-2"></i>Book Now</button>
+</div>
+</div>
+</div>
+
+<!-- BMW 5 Series -->
+<div class="car-card max-w-6xl mb-6 mx-auto bg-white rounded-3xl shadow-xl overflow-hidden hover:shadow-2xl transition" data-name="BMW 5 Series" data-category="Luxury" data-price="3500">
+<div class="flex flex-col lg:flex-row">
+<div class="lg:w-1/2 p-6 md:p-8 flex items-center justify-center">
+<img src="https://placehold.co/600x400?text=BMW+5+Series" class="w-full h-80 object-cover rounded-2xl" alt="BMW 5 Series">
+</div>
+<div class="lg:w-1/2 p-6 md:p-8 flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-start gap-3">
+<h5 class="text-3xl font-bold mb-4">BMW 5 Series</h5>
+<span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm font-semibold">Luxury</span>
+</div>
+<p class="text-gray-600 text-lg mb-5">Luxury sedan designed for premium travel with powerful performance and exceptional comfort.</p>
+<div class="grid grid-cols-2 gap-3 mb-5 text-gray-700">
+<span><i class="fa-solid fa-users text-yellow-500 mr-2"></i>5 Seats</span>
+<span><i class="fa-solid fa-snowflake text-yellow-500 mr-2"></i>AC</span>
+<span><i class="fa-solid fa-gas-pump text-yellow-500 mr-2"></i>Petrol</span>
+<span><i class="fa-solid fa-gears text-yellow-500 mr-2"></i>Automatic</span>
+</div>
+<p class="text-3xl font-bold text-gray-900 mb-5">₹3,500 <span class="text-base font-normal text-gray-500">/ day</span></p>
+</div>
+<button onclick="openModal('BMW 5 Series','₹3,500 / day','https://placehold.co/600x400?text=BMW+5+Series')" class="bg-yellow-400 hover:bg-yellow-500 w-full py-3 rounded-lg font-bold transition"><i class="fa-solid fa-calendar-check mr-2"></i>Book Now</button>
+</div>
+</div>
+</div>
+
+<!-- Mercedes E Class -->
+<div class="car-card max-w-6xl mb-6 mx-auto bg-white rounded-3xl shadow-xl overflow-hidden hover:shadow-2xl transition" data-name="Mercedes E Class" data-category="Luxury" data-price="4500">
+<div class="flex flex-col lg:flex-row">
+<div class="lg:w-1/2 p-6 md:p-8 flex items-center justify-center">
+<img src="https://placehold.co/600x400?text=Mercedes+E+Class" class="w-full h-80 object-cover rounded-2xl" alt="Mercedes E Class">
+</div>
+<div class="lg:w-1/2 p-6 md:p-8 flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-start gap-3">
+<h5 class="text-3xl font-bold mb-4">Mercedes E Class</h5>
+<span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm font-semibold">Luxury</span>
+</div>
+<p class="text-gray-600 text-lg mb-5">Elegant luxury sedan providing first-class comfort, premium interiors and a smooth ride.</p>
+<div class="grid grid-cols-2 gap-3 mb-5 text-gray-700">
+<span><i class="fa-solid fa-users text-yellow-500 mr-2"></i>5 Seats</span>
+<span><i class="fa-solid fa-snowflake text-yellow-500 mr-2"></i>AC</span>
+<span><i class="fa-solid fa-gas-pump text-yellow-500 mr-2"></i>Petrol</span>
+<span><i class="fa-solid fa-gears text-yellow-500 mr-2"></i>Automatic</span>
+</div>
+<p class="text-3xl font-bold text-gray-900 mb-5">₹4,500 <span class="text-base font-normal text-gray-500">/ day</span></p>
+</div>
+<button onclick="openModal('Mercedes E Class','₹4,500 / day','https://placehold.co/600x400?text=Mercedes+E+Class')" class="bg-yellow-400 hover:bg-yellow-500 w-full py-3 rounded-lg font-bold transition"><i class="fa-solid fa-calendar-check mr-2"></i>Book Now</button>
+</div>
+</div>
+</div>
+
+</div>
+
+<p id="noCars" class="hidden text-center text-gray-500 text-lg py-10">No cars found matching your search.</p>
+
+</section>
+
+<!-- Why Choose Us -->
+<section class="bg-white py-12">
+<div class="max-w-7xl mx-auto px-4">
+<h3 class="text-center text-2xl font-bold">Why Choose RAN's CAB?</h3>
+<div class="w-24 h-1 bg-gray-900 mx-auto my-3"></div>
+<div class="grid md:grid-cols-4 gap-6 mt-8">
+<div class="text-center p-6 rounded-xl shadow-md hover:shadow-xl transition">
+<i class="fa-solid fa-shield-halved text-4xl text-yellow-500 mb-4"></i>
+<h4 class="font-bold text-lg">Safe & Reliable</h4>
+<p class="text-gray-600 mt-2">Well-maintained cars and reliable service.</p>
+</div>
+<div class="text-center p-6 rounded-xl shadow-md hover:shadow-xl transition">
+<i class="fa-solid fa-indian-rupee-sign text-4xl text-yellow-500 mb-4"></i>
+<h4 class="font-bold text-lg">Affordable Prices</h4>
+<p class="text-gray-600 mt-2">Competitive prices for every journey.</p>
+</div>
+<div class="text-center p-6 rounded-xl shadow-md hover:shadow-xl transition">
+<i class="fa-solid fa-headset text-4xl text-yellow-500 mb-4"></i>
+<h4 class="font-bold text-lg">24/7 Support</h4>
+<p class="text-gray-600 mt-2">Our support team is always available.</p>
+</div>
+<div class="text-center p-6 rounded-xl shadow-md hover:shadow-xl transition">
+<i class="fa-solid fa-car text-4xl text-yellow-500 mb-4"></i>
+<h4 class="font-bold text-lg">Wide Selection</h4>
+<p class="text-gray-600 mt-2">Choose from multiple car categories.</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Booking Modal -->
+<div id="bookingModal" class="fixed inset-0 bg-black bg-opacity-60 hidden items-center justify-center z-50 p-4">
+<div class="bg-white w-full max-w-2xl rounded-2xl shadow-2xl overflow-hidden max-h-[95vh] overflow-y-auto">
+<div class="flex justify-between items-center border-b p-5 bg-gray-900 text-white">
+<h2 class="text-xl font-bold"><i class="fa-solid fa-calendar-check mr-2 text-yellow-400"></i>Complete Your Booking</h2>
+<button onclick="closeModal()" class="text-gray-300 hover:text-yellow-400 text-2xl">✕</button>
+</div>
+<form id="bookingForm" class="p-6 space-y-5">
+
+<!-- Selected Car -->
+<div class="bg-gray-100 p-4 rounded-xl flex items-center gap-4">
+<img id="carImage" class="w-28 h-20 object-cover rounded-lg" src="" alt="Selected Car">
+<div class="flex-1">
+<h3 id="carTitle" class="font-bold text-xl"></h3>
+<p id="carPrice" class="text-yellow-600 font-semibold"></p>
+</div>
+</div>
+
+<input type="hidden" id="carName" name="car">
+<input type="hidden" id="carPriceInput" name="price">
+
+<!-- Customer Details -->
+<div>
+<h3 class="font-semibold text-lg mb-3"><i class="fa-solid fa-user mr-2 text-yellow-500"></i>Customer Details</h3>
+<div class="grid md:grid-cols-2 gap-4">
+<input type="text" name="name" placeholder="Full Name" required class="border border-gray-300 p-3 rounded-lg outline-none focus:ring-2 focus:ring-yellow-400">
+<input type="email" name="email" placeholder="Email Address" required class="border border-gray-300 p-3 rounded-lg outline-none focus:ring-2 focus:ring-yellow-400">
+<input type="tel" name="phone" placeholder="Phone Number" pattern="[0-9]{10}" maxlength="10" required class="border border-gray-300 p-3 rounded-lg outline-none focus:ring-2 focus:ring-yellow-400">
+<input type="number" name="passengers" min="1" max="10" placeholder="Number of Passengers" required class="border border-gray-300 p-3 rounded-lg outline-none focus:ring-2 focus:ring-yellow-400">
+</div>
+</div>
+
+<!-- Trip Details -->
+<div>
+<h3 class="font-semibold text-lg mb-3"><i class="fa-solid fa-route mr-2 text-yellow-500"></i>Trip Details</h3>
+<div class="grid md:grid-cols-2 gap-4">
+<input type="text" name="pickup" placeholder="Pickup Location" required class="border border-gray-300 p-3 rounded-lg outline-none focus:ring-2 focus:ring-yellow-400">
+<input type="text" name="drop" placeholder="Drop Location" required class="border border-gray-300 p-3 rounded-lg outline-none focus:ring-2 focus:ring-yellow-400">
+<input type="date" id="bookingDate" name="date" required class="border border-gray-300 p-3 rounded-lg outline-none focus:ring-2 focus:ring-yellow-400">
+<input type="time" name="time" required class="border border-gray-300 p-3 rounded-lg outline-none focus:ring-2 focus:ring-yellow-400">
+</div>
+</div>
+
+<!-- Payment -->
+<div>
+<h3 class="font-semibold text-lg mb-3"><i class="fa-solid fa-wallet mr-2 text-yellow-500"></i>Payment Method</h3>
+<select name="payment" class="border border-gray-300 p-3 rounded-lg w-full outline-none focus:ring-2 focus:ring-yellow-400">
+<option value="Pay on Arrival">Pay on Arrival</option>
+<option value="UPI">UPI</option>
+<option value="Card">Card</option>
+</select>
+</div>
+
+<!-- Buttons -->
+<div class="flex flex-col sm:flex-row gap-4">
+<button type="button" onclick="closeModal()" class="w-full sm:w-1/2 bg-gray-300 hover:bg-gray-400 py-3 rounded-lg font-semibold transition">Cancel</button>
+<button type="submit" class="w-full sm:w-1/2 bg-yellow-400 hover:bg-yellow-500 py-3 rounded-lg font-bold transition"><i class="fa-solid fa-check mr-2"></i>Confirm Booking</button>
+</div>
+
+</form>
+</div>
+</div>
+
+<!-- Back To Top -->
+<button onclick="window.scrollTo({top:0,behavior:'smooth'})" class="fixed bottom-6 left-6 w-12 h-12 bg-gray-900 hover:bg-gray-700 text-white rounded-full shadow-lg z-50" title="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
+
+<!-- ================= FOOTER ================= -->
+
+<footer class="bg-yellow-400 mt-10">
+
+<div class="max-w-7xl mx-auto px-6 py-12 grid md:grid-cols-3 gap-10">
+
+<div>
+
+<h3 class="text-2xl font-bold mb-4">
+<i class="fa-solid fa-taxi mr-2"></i>RAN's CAB
+</h3>
+
+<p class="text-gray-700">
+Your reliable cab rental service in Pune. Book comfortable and affordable cars for local, outstation and airport journeys.
+</p>
+
+<h4 class="text-lg font-bold mt-4">Follow Us</h4>
+<div class="flex gap-4 mt-3">
+
+<a href="#" class="text-2xl hover:text-blue-600">
+<i class="fa-brands fa-facebook"></i>
+</a>
+
+<a href="#" class="text-2xl hover:text-pink-600">
+<i class="fa-brands fa-instagram"></i>
+</a>
+
+<a href="#" class="text-2xl hover:text-blue-500">
+<i class="fa-brands fa-twitter"></i>
+</a>
+
+</div>
+
+</div>
+
+<div>
+
+<h4 class="text-lg font-bold mb-4">Quick Links</h4>
+
+<div class="flex flex-col space-y-3">
+
+<a href="index.html" class="hover:text-blue-600">Home</a>
+<a href="cars.html" class="hover:text-blue-600">Cars</a>
+<a href="facilities.html" class="hover:text-blue-600">Facilities</a>
+<a href="contact.html" class="hover:text-blue-600">Contact Us</a>
+<a href="about.html" class="hover:text-blue-600">About Us</a>
+
+</div>
+
+</div>
+
+<div>
+
+<h4 class="text-lg font-bold mb-4">Contact Us</h4>
+
+<p class="mb-3">
+<i class="fa-solid fa-phone mr-2"></i>
+<a href="tel:+919579645381">+91 9579645381</a>
+</p>
+
+<p class="mb-3">
+<i class="fa-solid fa-phone mr-2"></i>
+<a href="tel:+917020310485">+91 7020310485</a>
+</p>
+
+<p class="mb-3">
+<i class="fa-solid fa-envelope mr-2"></i>
+services@ranacab.com
+</p>
+
+<p>
+<i class="fa-solid fa-location-dot mr-2"></i>
+Gold County, Charholi, Pune, Maharashtra
+</p>
+
+</div>
+
+</div>
+
+<div class="bg-gray-900 text-white text-center py-4">
+© RAN's CAB Limited 2026. All Rights Reserved.
+</div>
+
+</footer>
+
+<!-- Floating Buttons -->
+<div class="fixed right-5 bottom-5 flex flex-col gap-3 z-40">
+<a href="tel:+919579645381" class="w-14 h-14 rounded-full bg-blue-600 text-white flex items-center justify-center text-2xl shadow-lg hover:scale-110 transition" aria-label="Call Us"><i class="fa-solid fa-phone"></i></a>
+<a href="https://wa.me/919579645381" target="_blank" class="w-14 h-14 rounded-full bg-green-500 text-white flex items-center justify-center text-2xl shadow-lg hover:scale-110 transition" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+</div>
+
+<script>
+/* MOBILE MENU */
+
+document.getElementById("menuButton").addEventListener("click", function() {
+document.getElementById("mobileMenu").classList.toggle("hidden");
+});
+
+function openModal(name,price,image){
+document.getElementById("bookingModal").classList.remove("hidden");
+document.getElementById("bookingModal").classList.add("flex");
+document.getElementById("carTitle").innerText=name;
+document.getElementById("carPrice").innerText=price;
+document.getElementById("carImage").src=image;
+document.getElementById("carName").value=name;
+document.getElementById("carPriceInput").value=price;
+document.body.classList.add("overflow-hidden");
+}
+function closeModal(){
+document.getElementById("bookingModal").classList.add("hidden");
+document.getElementById("bookingModal").classList.remove("flex");
+document.body.classList.remove("overflow-hidden");
+}
+function filterCars(){
+let search=document.getElementById("searchCar").value.toLowerCase();
+let category=document.getElementById("categoryFilter").value;
+let cars=document.querySelectorAll(".car-card");
+let visible=0;
+cars.forEach(function(car){
+let name=car.dataset.name.toLowerCase();
+let carCategory=car.dataset.category;
+let matchName=name.includes(search);
+let matchCategory=category==="all"||carCategory===category;
+if(matchName&&matchCategory){
+car.style.display="block";
+visible++;
+}else{
+car.style.display="none";
+}
+});
+document.getElementById("noCars").classList.toggle("hidden",visible!==0);
+}
+function sortCars(){
+let container=document.getElementById("carsContainer");
+let cars=Array.from(container.querySelectorAll(".car-card"));
+let sort=document.getElementById("priceSort").value;
+if(sort==="low"){
+cars.sort(function(a,b){return Number(a.dataset.price)-Number(b.dataset.price);});
+}
+if(sort==="high"){
+cars.sort(function(a,b){return Number(b.dataset.price)-Number(a.dataset.price);});
+}
+cars.forEach(function(car){container.appendChild(car);});
+}
+document.getElementById("bookingForm").addEventListener("submit",function(e){
+e.preventDefault();
+let name=document.getElementById("carName").value;
+let price=document.getElementById("carPriceInput").value;
+alert("Booking Confirmed!\n\nCar: "+name+"\nPrice: "+price+"\n\nThank you for booking with RAN's CAB.");
+closeModal();
+this.reset();
+});
+document.addEventListener("DOMContentLoaded",function(){
+let today=new Date().toISOString().split("T")[0];
+document.getElementById("bookingDate").min=today;
+});
+document.getElementById("bookingModal").addEventListener("click",function(e){
+if(e.target===this){
+closeModal();
+}
+});
+document.addEventListener("keydown",function(e){
+if(e.key==="Escape"){
+closeModal();
+}
+});
+</script>
+
+</body>
+</html>
