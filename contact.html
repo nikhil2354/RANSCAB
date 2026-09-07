@@ -8,100 +8,74 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 <body class="bg-gray-100 text-gray-800">
+<nav class="bg-gray-900 text-white sticky top-0 z-50 shadow-lg">
+<div class="max-w-7xl mx-auto px-4 py-5 flex justify-between items-center">
+<a href="index.html" class="text-3xl font-bold"><i class="fa-solid fa-taxi text-yellow-400"></i> Raghav Rentals</a>
+<div class="hidden md:flex space-x-8 items-center text-lg">
+<a href="index.html" class="hover:text-yellow-400 transition">Home</a>
+<a href="cars.html" class="hover:text-yellow-400 transition">Cars</a>
+<a href="facilities.html" class="hover:text-yellow-400 transition">Facilities</a>
+<a href="contact.html" class="text-yellow-400 font-bold">Contact</a>
+<a href="about.html" class="hover:text-yellow-400 transition">About Us</a>
+</div>
+<button id="menuButton" class="md:hidden text-2xl"><i class="fa-solid fa-bars"></i></button>
+</div>
+<div id="mobileMenu" class="hidden md:hidden bg-gray-800 px-5 pb-5">
+<a href="index.html" class="block py-3 hover:text-yellow-400">Home</a>
+<a href="cars.html" class="block py-3 hover:text-yellow-400">Cars</a>
+<a href="facilities.html" class="block py-3 hover:text-yellow-400">Facilities</a>
+<a href="contact.html" class="block py-3 text-yellow-400">Contact</a>
+<a href="about.html" class="block py-3 hover:text-yellow-400">About Us</a>
+</div>
+</nav>
 
-    <!-- ================= NAVBAR ================= -->
-
-    <nav class="bg-gray-900 text-white sticky top-0 z-50 shadow-lg">
-    
-    <div class="max-w-7xl mx-auto px-4 py-5 flex justify-between items-center">
-    
-    <a href="index.html" class="text-3xl font-bold">
-    <i class="fa-solid fa-taxi text-yellow-400"></i> RAN's CAB
-    </a>
-    
-    <div class="hidden md:flex space-x-8 items-center text-lg">
-    <a href="index.html" class="hover:text-yellow-400 transition">Home</a>
-    <a href="cars.html" class="hover:text-yellow-400  transition">Cars</a>
-    <a href="facilities.html" class="hover:text-yellow-400 transition">Facilities</a>
-    <a href="contact.html" class="text-yellow-400 font-bold">Contact</a>
-    <a href="about.html" class="hover:text-yellow-400 transition">About Us</a>
-    </div>
-    
-    <button id="menuButton" class="md:hidden text-2xl">
-    <i class="fa-solid fa-bars"></i>
-    </button>
-    
-    </div>
-    
-    <div id="mobileMenu" class="mobile-menu hidden md:hidden bg-gray-800 px-5 pb-5">
-    <a href="index.html" class="block py-3 hover:text-yellow-400">Home</a>
-    <a href="cars.html" class="block py-3 hover:text-yellow-400">Cars</a>
-    <a href="facilities.html" class="block py-3 hover:text-yellow-400">Facilities</a>
-    <a href="contact.html" class="block py-3 text-yellow-400">Contact</a>
-    <a href="about.html" class="block py-3 hover:text-yellow-400">About Us</a>
-    </div>
-    
-    </nav>
-
-<!-- Page Header -->
-<section class="bg-yellow-400 py-12">
-<div class="max-w-7xl mx-auto px-4 text-center">
+<section class="bg-yellow-400 py-12 relative overflow-hidden">
+<div class="absolute -top-20 -right-20 w-64 h-64 bg-white/10 rounded-full"></div>
+<div class="absolute -bottom-24 -left-16 w-72 h-72 bg-gray-900/5 rounded-full"></div>
+<div class="max-w-7xl mx-auto px-4 text-center relative z-10">
+<div class="w-14 h-14 mx-auto mb-4 rounded-2xl bg-gray-900 flex items-center justify-center shadow-lg">
+<i class="fa-solid fa-address-book text-yellow-400 text-xl"></i>
+</div>
+<p class="text-gray-900 font-semibold uppercase tracking-widest text-sm mb-2">We're Here to Help</p>
 <h2 class="text-4xl font-bold text-gray-900">Contact RAN's CAB</h2>
 <p class="mt-3 text-gray-800 text-lg">Have a question, need a cab or want to make a booking? We're here to help.</p>
 </div>
 </section>
 
-<!-- Contact Section -->
+
+
+
 <section class="max-w-7xl mx-auto py-12 px-4">
 <h3 class="text-center text-2xl font-bold">Get In Touch</h3>
 <div class="w-24 h-1 bg-gray-900 mx-auto my-3"></div>
 <p class="text-center text-gray-600 max-w-2xl mx-auto">Contact us for cab bookings, rental enquiries, airport transfers, family trips and long-distance journeys.</p>
 
 <div class="grid lg:grid-cols-2 gap-8 mt-10">
-
-<!-- Contact Information -->
 <div class="bg-white rounded-3xl shadow-xl overflow-hidden">
 <div class="bg-gray-900 text-white p-6">
 <h3 class="text-2xl font-bold"><i class="fa-solid fa-address-book text-yellow-400 mr-2"></i>Contact Information</h3>
 <p class="text-gray-300 mt-2">We're ready to assist you with your journey.</p>
 </div>
-
 <div class="p-6">
-
-<!-- Map -->
 <div class="w-full h-72 rounded-2xl overflow-hidden mb-7">
 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1013.3718282332435!2d73.90078747195948!3d18.655521217143985!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2c63a1e607701%3A0x14c934178e78b5bd!2sParshwa%20Gold%20County%20Residential%20Building!5e1!3m2!1sen!2sin!4v1787291610428!5m2!1sen!2sin" class="w-full h-full border-0" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
 </div>
 
-<!-- Address -->
 <div class="flex items-start gap-4 p-4 bg-gray-50 rounded-xl mb-4">
 <div class="w-12 h-12 bg-yellow-400 rounded-full flex items-center justify-center text-gray-900 text-xl flex-shrink-0"><i class="fa-solid fa-location-dot"></i></div>
-<div>
-<h4 class="font-bold text-lg">Address</h4>
-<a href="https://www.google.com/maps/search/?api=1&query=Alandi,Pune,Maharashtra" target="_blank" class="text-gray-600 hover:text-blue-600">Alandi, Pune, Maharashtra-05.</a>
-</div>
+<div><h4 class="font-bold text-lg">Address</h4><a href="https://www.google.com/maps/search/?api=1&query=Alandi,Pune,Maharashtra" target="_blank" rel="noopener noreferrer" class="text-gray-600 hover:text-blue-600">Alandi, Pune, Maharashtra-05.</a></div>
 </div>
 
-<!-- Phone -->
 <div class="flex items-start gap-4 p-4 bg-gray-50 rounded-xl mb-4">
 <div class="w-12 h-12 bg-yellow-400 rounded-full flex items-center justify-center text-gray-900 text-xl flex-shrink-0"><i class="fa-solid fa-phone"></i></div>
-<div>
-<h4 class="font-bold text-lg">Call Us</h4>
-<a href="tel:+919579645381" class="block text-gray-600 hover:text-blue-600">+91 9579645381</a>
-<a href="tel:+917020310485" class="block text-gray-600 hover:text-blue-600">+91 7020310485</a>
-</div>
+<div><h4 class="font-bold text-lg">Call Us</h4><a href="tel:+919579645381" class="block text-gray-600 hover:text-blue-600">+91 9579645381</a><a href="tel:+917020310485" class="block text-gray-600 hover:text-blue-600">+91 7020310485</a></div>
 </div>
 
-<!-- Email -->
 <div class="flex items-start gap-4 p-4 bg-gray-50 rounded-xl mb-4">
 <div class="w-12 h-12 bg-yellow-400 rounded-full flex items-center justify-center text-gray-900 text-xl flex-shrink-0"><i class="fa-solid fa-envelope"></i></div>
-<div>
-<h4 class="font-bold text-lg">Email</h4>
-<a href="mailto:services@ranacab.com" class="text-gray-600 hover:text-blue-600">services@ranacab.com</a>
-</div>
+<div><h4 class="font-bold text-lg">Email</h4><a href="mailto:services@ranacab.com" class="text-gray-600 hover:text-blue-600">services@ranacab.com</a></div>
 </div>
 
-<!-- Social -->
 <div class="pt-3">
 <h4 class="font-bold text-lg mb-3">Follow Us</h4>
 <div class="flex gap-4 text-2xl">
@@ -110,210 +84,80 @@
 <a href="#" class="w-11 h-11 bg-gray-100 rounded-full flex items-center justify-center text-gray-700 hover:bg-pink-600 hover:text-white transition" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
 </div>
 </div>
-
 </div>
 </div>
 
-<!-- Contact Form -->
 <div class="bg-white rounded-3xl shadow-xl overflow-hidden">
 <div class="bg-gray-900 text-white p-6">
 <h3 class="text-2xl font-bold"><i class="fa-solid fa-paper-plane text-yellow-400 mr-2"></i>Send Us a Message</h3>
 <p class="text-gray-300 mt-2">Fill out the form and we'll get back to you.</p>
 </div>
-
 <form id="contactForm" class="p-6 space-y-5">
-
-<div>
-<label for="name" class="block font-semibold mb-2">Full Name</label>
-<div class="relative">
-<i class="fa-solid fa-user absolute left-4 top-4 text-gray-400"></i>
-<input type="text" id="name" name="name" required placeholder="Enter your full name" class="w-full border border-gray-300 rounded-xl p-3 pl-11 outline-none focus:ring-2 focus:ring-yellow-400 focus:border-yellow-400">
-</div>
-</div>
-
-<div>
-<label for="email" class="block font-semibold mb-2">Email Address</label>
-<div class="relative">
-<i class="fa-solid fa-envelope absolute left-4 top-4 text-gray-400"></i>
-<input type="email" id="email" name="email" required placeholder="Enter your email address" class="w-full border border-gray-300 rounded-xl p-3 pl-11 outline-none focus:ring-2 focus:ring-yellow-400 focus:border-yellow-400">
-</div>
-</div>
-
-<div>
-<label for="phone" class="block font-semibold mb-2">Phone Number</label>
-<div class="relative">
-<i class="fa-solid fa-phone absolute left-4 top-4 text-gray-400"></i>
-<input type="tel" id="phone" name="phone" pattern="[0-9]{10}" maxlength="10" required placeholder="Enter 10-digit phone number" class="w-full border border-gray-300 rounded-xl p-3 pl-11 outline-none focus:ring-2 focus:ring-yellow-400 focus:border-yellow-400">
-</div>
-</div>
-
-<div>
-<label for="subject" class="block font-semibold mb-2">Subject</label>
-<div class="relative">
-<i class="fa-solid fa-heading absolute left-4 top-4 text-gray-400"></i>
-<input type="text" id="subject" name="subject" required placeholder="What is your enquiry about?" class="w-full border border-gray-300 rounded-xl p-3 pl-11 outline-none focus:ring-2 focus:ring-yellow-400 focus:border-yellow-400">
-</div>
-</div>
-
-<div>
-<label for="message" class="block font-semibold mb-2">Message</label>
-<textarea id="message" name="message" rows="6" required maxlength="500" placeholder="Write your message here..." class="w-full border border-gray-300 rounded-xl p-3 outline-none resize-none focus:ring-2 focus:ring-yellow-400 focus:border-yellow-400"></textarea>
-<p class="text-right text-sm text-gray-400 mt-1"><span id="charCount">0</span>/500</p>
-</div>
-
+<div><label for="name" class="block font-semibold mb-2">Full Name</label><div class="relative"><i class="fa-solid fa-user absolute left-4 top-4 text-gray-400"></i><input type="text" id="name" name="name" required placeholder="Enter your full name" class="w-full border border-gray-300 rounded-xl p-3 pl-11 outline-none focus:ring-2 focus:ring-yellow-400 focus:border-yellow-400"></div></div>
+<div><label for="email" class="block font-semibold mb-2">Email Address</label><div class="relative"><i class="fa-solid fa-envelope absolute left-4 top-4 text-gray-400"></i><input type="email" id="email" name="email" required placeholder="Enter your email address" class="w-full border border-gray-300 rounded-xl p-3 pl-11 outline-none focus:ring-2 focus:ring-yellow-400 focus:border-yellow-400"></div></div>
+<div><label for="phone" class="block font-semibold mb-2">Phone Number</label><div class="relative"><i class="fa-solid fa-phone absolute left-4 top-4 text-gray-400"></i><input type="tel" id="phone" name="phone" pattern="[0-9]{10}" maxlength="10" required placeholder="Enter 10-digit phone number" class="w-full border border-gray-300 rounded-xl p-3 pl-11 outline-none focus:ring-2 focus:ring-yellow-400 focus:border-yellow-400"></div></div>
+<div><label for="subject" class="block font-semibold mb-2">Subject</label><div class="relative"><i class="fa-solid fa-heading absolute left-4 top-4 text-gray-400"></i><input type="text" id="subject" name="subject" required placeholder="What is your enquiry about?" class="w-full border border-gray-300 rounded-xl p-3 pl-11 outline-none focus:ring-2 focus:ring-yellow-400 focus:border-yellow-400"></div></div>
+<div><label for="message" class="block font-semibold mb-2">Message</label><textarea id="message" name="message" rows="6" required maxlength="500" placeholder="Write your message here..." class="w-full border border-gray-300 rounded-xl p-3 outline-none resize-none focus:ring-2 focus:ring-yellow-400 focus:border-yellow-400"></textarea><p class="text-right text-sm text-gray-400 mt-1"><span id="charCount">0</span>/500</p></div>
 <button type="submit" class="w-full bg-yellow-400 hover:bg-yellow-500 text-gray-900 py-3 rounded-xl font-bold text-lg transition"><i class="fa-solid fa-paper-plane mr-2"></i>Send Message</button>
-
 </form>
 </div>
-
 </div>
 </section>
 
-<!-- Quick Contact -->
-<section class="bg-white py-12">
+<section class="bg-gray-100 py-12">
 <div class="max-w-7xl mx-auto px-4">
 <h3 class="text-center text-2xl font-bold">Need Immediate Assistance?</h3>
 <div class="w-24 h-1 bg-gray-900 mx-auto my-3"></div>
 <div class="grid md:grid-cols-3 gap-6 mt-8">
-
-<div class="text-center p-6 rounded-2xl shadow-md hover:shadow-xl transition">
-<div class="w-16 h-16 bg-yellow-400 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl"><i class="fa-solid fa-phone"></i></div>
-<h4 class="font-bold text-lg">Call Us</h4>
-<p class="text-gray-600 mt-2 mb-4">Speak directly with our team.</p>
-<a href="tel:+919579645381" class="inline-block bg-gray-900 text-white px-5 py-2 rounded-lg hover:bg-gray-700 transition">Call Now</a>
-</div>
-
-<div class="text-center p-6 rounded-2xl shadow-md hover:shadow-xl transition">
-<div class="w-16 h-16 bg-yellow-400 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl"><i class="fa-brands fa-whatsapp"></i></div>
-<h4 class="font-bold text-lg">WhatsApp</h4>
-<p class="text-gray-600 mt-2 mb-4">Chat with us for quick assistance.</p>
-<a href="https://wa.me/919579645381" target="_blank" class="inline-block bg-green-500 text-white px-5 py-2 rounded-lg hover:bg-green-600 transition">Chat Now</a>
-</div>
-
-<div class="text-center p-6 rounded-2xl shadow-md hover:shadow-xl transition">
-<div class="w-16 h-16 bg-yellow-400 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl"><i class="fa-solid fa-car"></i></div>
-<h4 class="font-bold text-lg">Book a Cab</h4>
-<p class="text-gray-600 mt-2 mb-4">Choose a car and make your booking.</p>
-<a href="cars.html" class="inline-block bg-gray-900 text-white px-5 py-2 rounded-lg hover:bg-gray-700 transition">View Cars</a>
-</div>
-
+<div class="bg-white text-center p-6 rounded-2xl shadow-md hover:shadow-xl transition"><div class="w-16 h-16 bg-blue-600 text-white rounded-full flex items-center justify-center mx-auto mb-4 text-2xl"><i class="fa-solid fa-phone"></i></div><h4 class="font-bold text-lg">Call Us</h4><p class="text-gray-600 mt-2 mb-4">Speak directly with our team.</p><a href="tel:+919579645381" class="inline-block bg-gray-900 text-white px-5 py-2 rounded-lg hover:bg-gray-700 transition">Call Now</a></div>
+<div class="bg-white text-center p-6 rounded-2xl shadow-md hover:shadow-xl transition"><div class="w-16 h-16 bg-green-500 text-white rounded-full flex items-center justify-center mx-auto mb-4 text-2xl"><i class="fa-brands fa-whatsapp"></i></div><h4 class="font-bold text-lg">WhatsApp</h4><p class="text-gray-600 mt-2 mb-4">Chat with us for quick assistance.</p><a href="https://wa.me/919579645381" target="_blank" rel="noopener noreferrer" class="inline-block bg-green-500 text-white px-5 py-2 rounded-lg hover:bg-green-600 transition">Chat Now</a></div>
+<div class="bg-white text-center p-6 rounded-2xl shadow-md hover:shadow-xl transition"><div class="w-16 h-16 bg-yellow-400 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl"><i class="fa-solid fa-car"></i></div><h4 class="font-bold text-lg">Book a Cab</h4><p class="text-gray-600 mt-2 mb-4">Choose a car and make your booking.</p><a href="cars.html" class="inline-block bg-gray-900 text-white px-5 py-2 rounded-lg hover:bg-gray-700 transition">View Cars</a></div>
 </div>
 </div>
 </section>
 
-
-<!-- Back To Top -->
 <button onclick="window.scrollTo({top:0,behavior:'smooth'})" class="fixed bottom-6 left-6 w-12 h-12 bg-gray-900 hover:bg-gray-700 text-white rounded-full shadow-lg z-50" title="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
 
-<!-- ================= FOOTER ================= -->
-
 <footer class="bg-yellow-400 mt-10">
-
 <div class="max-w-7xl mx-auto px-6 py-12 grid md:grid-cols-3 gap-10">
-
 <div>
-
-<h3 class="text-2xl font-bold mb-4">
-<i class="fa-solid fa-taxi mr-2"></i>RAN's CAB
-</h3>
-
-<p class="text-gray-700">
-Your reliable cab rental service in Pune. Book comfortable and affordable cars for local, outstation and airport journeys.
-</p>
-
+<h3 class="text-2xl font-bold mb-4"><i class="fa-solid fa-taxi mr-2"></i>RAN's CAB</h3>
+<p class="text-gray-700">Your reliable cab rental service in Pune. Book comfortable and affordable cars for local, outstation and airport journeys.</p>
 <h4 class="text-lg font-bold mt-4">Follow Us</h4>
-<div class="flex gap-4 mt-3">
-
-<a href="#" class="text-2xl hover:text-blue-600">
-<i class="fa-brands fa-facebook"></i>
-</a>
-
-<a href="#" class="text-2xl hover:text-pink-600">
-<i class="fa-brands fa-instagram"></i>
-</a>
-
-<a href="#" class="text-2xl hover:text-blue-500">
-<i class="fa-brands fa-twitter"></i>
-</a>
-
+<div class="flex gap-4 mt-3"><a href="#" class="text-2xl hover:text-blue-600"><i class="fa-brands fa-facebook"></i></a><a href="#" class="text-2xl hover:text-pink-600"><i class="fa-brands fa-instagram"></i></a><a href="#" class="text-2xl hover:text-blue-500"><i class="fa-brands fa-twitter"></i></a></div>
 </div>
-
-</div>
-
 <div>
-
 <h4 class="text-lg font-bold mb-4">Quick Links</h4>
-
-<div class="flex flex-col space-y-3">
-
-<a href="index.html" class="hover:text-blue-600">Home</a>
-<a href="cars.html" class="hover:text-blue-600">Cars</a>
-<a href="facilities.html" class="hover:text-blue-600">Facilities</a>
-<a href="contact.html" class="hover:text-blue-600">Contact Us</a>
-<a href="about.html" class="hover:text-blue-600">About Us</a>
-
+<div class="flex flex-col space-y-3"><a href="index.html" class="hover:text-blue-600">Home</a><a href="cars.html" class="hover:text-blue-600">Cars</a><a href="facilities.html" class="hover:text-blue-600">Facilities</a><a href="contact.html" class="hover:text-blue-600">Contact Us</a><a href="about.html" class="hover:text-blue-600">About Us</a></div>
 </div>
-
-</div>
-
 <div>
-
 <h4 class="text-lg font-bold mb-4">Contact Us</h4>
-
-<p class="mb-3">
-<i class="fa-solid fa-phone mr-2"></i>
-<a href="tel:+919579645381">+91 9579645381</a>
-</p>
-
-<p class="mb-3">
-<i class="fa-solid fa-phone mr-2"></i>
-<a href="tel:+917020310485">+91 7020310485</a>
-</p>
-
-<p class="mb-3">
-<i class="fa-solid fa-envelope mr-2"></i>
-services@ranacab.com
-</p>
-
-<p>
-<i class="fa-solid fa-location-dot mr-2"></i>
-Gold County, Charholi, Pune, Maharashtra
-</p>
-
+<p class="mb-3"><i class="fa-solid fa-phone mr-2"></i><a href="tel:+919579645381">+91 9579645381</a></p>
+<p class="mb-3"><i class="fa-solid fa-phone mr-2"></i><a href="tel:+917020310485">+91 7020310485</a></p>
+<p class="mb-3"><i class="fa-solid fa-envelope mr-2"></i>services@ranacab.com</p>
+<p><i class="fa-solid fa-location-dot mr-2"></i>Gold County, Charholi, Pune, Maharashtra</p>
 </div>
-
 </div>
-
-<div class="bg-gray-900 text-white text-center py-4">
-© RAN's CAB Limited 2026. All Rights Reserved.
-</div>
-
+<div class="bg-gray-900 text-white text-center py-4">© RAN's CAB Limited 2026. All Rights Reserved.</div>
 </footer>
 
-<!-- Floating Buttons -->
 <div class="fixed right-5 bottom-5 flex flex-col gap-3 z-40">
 <a href="tel:+919579645381" class="w-14 h-14 rounded-full bg-blue-600 text-white flex items-center justify-center text-2xl shadow-lg hover:scale-110 transition" aria-label="Call Us"><i class="fa-solid fa-phone"></i></a>
-<a href="https://wa.me/919579645381" target="_blank" class="w-14 h-14 rounded-full bg-green-500 text-white flex items-center justify-center text-2xl shadow-lg hover:scale-110 transition" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+<a href="https://wa.me/919579645381" target="_blank" rel="noopener noreferrer" class="w-14 h-14 rounded-full bg-green-500 text-white flex items-center justify-center text-2xl shadow-lg hover:scale-110 transition" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
 </div>
 
 <script>
-/* MOBILE MENU */
-document.getElementById("menuButton").addEventListener("click", function() {
-document.getElementById("mobileMenu").classList.toggle("hidden");
-});
-
-document.getElementById("message").addEventListener("input",function(){
-document.getElementById("charCount").innerText=this.value.length;
-});
-
+document.getElementById("menuButton").addEventListener("click",function(){document.getElementById("mobileMenu").classList.toggle("hidden");});
+document.getElementById("message").addEventListener("input",function(){document.getElementById("charCount").innerText=this.value.length;});
 document.getElementById("contactForm").addEventListener("submit",function(e){
 e.preventDefault();
 let name=document.getElementById("name").value.trim();
+let phone=document.getElementById("phone").value.trim();
+if(!/^[0-9]{10}$/.test(phone)){alert("Please enter a valid 10-digit phone number.");return;}
 alert("Thank you, "+name+"!\n\nYour message has been submitted successfully.\n\nRAN's CAB will contact you shortly.");
 this.reset();
 document.getElementById("charCount").innerText="0";
 });
 </script>
-
 </body>
 </html>
