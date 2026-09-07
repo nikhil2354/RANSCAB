@@ -1,941 +1,329 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>RAN's CAB - Cab Rental Service</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RAN's CAB - About Us</title>
 <script src="https://cdn.tailwindcss.com"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 <style>
-html{scroll-behavior:smooth}
-.booking-tab{transition:all .2s ease}
-.booking-tab.active{background-color:#facc15;color:#111827}
-.booking-tab:not(.active):hover{background-color:#f3f4f6}
-.car-card{transition:transform .3s ease,box-shadow .3s ease}
-.car-card:hover{transform:translateY(-6px);box-shadow:0 15px 30px rgba(0,0,0,.12)}
-.feature-card{transition:transform .3s ease,box-shadow .3s ease}
-.feature-card:hover{transform:translateY(-5px);box-shadow:0 12px 25px rgba(0,0,0,.12)}
-.floating-buttons{position:fixed;right:25px;bottom:25px;display:flex;flex-direction:column;gap:12px;z-index:9999}
-.floating-btn{width:55px;height:55px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:white;font-size:23px;text-decoration:none;box-shadow:0 4px 12px rgba(0,0,0,.25);transition:transform .3s ease}
-.floating-btn:hover{transform:scale(1.1)}
-.contact-btn{background:#007bff}
-.whatsapp-btn{background:#25D366}
-.mobile-menu{transition:all .3s ease}
-@media(max-width:600px){
-.floating-buttons{right:15px;bottom:15px}
-.floating-btn{width:50px;height:50px;font-size:21px}
-}
+html{scroll-behavior:smooth}.about-box,.feature-card,.team-card,.review-card{transition:all .3s ease}.about-box:hover{transform:translateY(-6px);border-top-color:#facc15}.feature-card:hover{transform:translateY(-6px);box-shadow:0 15px 30px rgba(0,0,0,.12)}.team-card:hover{transform:translateY(-6px)}.review-card:hover{transform:translateY(-5px)}.hero-overlay{background:linear-gradient(rgba(0,0,0,.65),rgba(0,0,0,.65))}
 </style>
 </head>
 <body class="bg-gray-100 text-gray-800">
 
-<!-- ================= NAVBAR ================= -->
+    <!-- ================= NAVBAR ================= -->
 
-<nav class="bg-gray-900 text-white sticky top-0 z-50 shadow-lg">
-<div class="max-w-7xl mx-auto px-4 py-5 flex justify-between items-center">
-<a href="index.html" class="text-3xl font-bold"><i class="fa-solid fa-taxi text-yellow-400"></i> Raghav Rentals</a>
-<div class="hidden md:flex space-x-8 items-center text-lg">
-<a href="index.html" class="text-yellow-400 font-bold">Home</a>
-<a href="cars.html" class="hover:text-yellow-400 transition">Cars</a>
-<a href="facilities.html" class="hover:text-yellow-400 transition">Facilities</a>
-<a href="contact.html" class="hover:text-yellow-400 transition">Contact</a>
-<a href="about.html" class="hover:text-yellow-400 transition">About Us</a>
-</div>
-<button id="menuButton" class="md:hidden text-2xl"><i class="fa-solid fa-bars"></i></button>
-</div>
-<div id="mobileMenu" class="mobile-menu hidden md:hidden bg-gray-800 px-5 pb-5">
-<a href="index.html" class="block py-3 text-yellow-400">Home</a>
-<a href="cars.html" class="block py-3 hover:text-yellow-400">Cars</a>
-<a href="facilities.html" class="block py-3 hover:text-yellow-400">Facilities</a>
-<a href="contact.html" class="block py-3 hover:text-yellow-400">Contact</a>
-<a href="about.html" class="block py-3 hover:text-yellow-400">About Us</a>
-</div>
-</nav>
+    <nav class="bg-gray-900 text-white sticky top-0 z-50 shadow-lg">
+    
+    <div class="max-w-7xl mx-auto px-4 py-5 flex justify-between items-center">
+    
+    <a href="index.html" class="text-3xl font-bold">
+    <i class="fa-solid fa-taxi text-yellow-400"></i> Raghav Rentals
+    </a>
+    
+    <div class="hidden md:flex space-x-8 items-center text-lg">
+    <a href="index.html" class="hover:text-yellow-400 transition">Home</a>
+    <a href="cars.html" class="hover:text-yellow-400 transition">Cars</a>
+    <a href="facilities.html" class="hover:text-yellow-400 transition">Facilities</a>
+    <a href="contact.html" class="hover:text-yellow-400 transition">Contact</a>
+    <a href="about.html" class="text-yellow-400 font-bold">About Us</a>
+    </div>
+    
+    <button id="menuButton" class="md:hidden text-2xl">
+    <i class="fa-solid fa-bars"></i>
+    </button>
+    
+    </div>
+    
+    <div id="mobileMenu" class="mobile-menu hidden md:hidden bg-gray-800 px-5 pb-5">
+    <a href="index.html" class="block py-3 hover:text-yellow-400">Home</a>
+    <a href="cars.html" class="block py-3 hover:text-yellow-400">Cars</a>
+    <a href="facilities.html" class="block py-3 hover:text-yellow-400">Facilities</a>
+    <a href="contact.html" class="block py-3 hover:text-yellow-400">Contact</a>
+    <a href="about.html" class="block py-3 text-yellow-400">About Us</a>
+    </div>
+    
+    </nav>
 
-
-<!-- ================= HERO ================= -->
-
-<section class="bg-gray-900 text-white py-14 md:py-20">
-<div class="max-w-7xl mx-auto px-5">
-<div class="grid lg:grid-cols-2 gap-10 items-center">
-<div>
-<p class="text-yellow-400 font-semibold text-lg mb-3"><i class="fa-solid fa-car-side mr-2"></i>YOUR JOURNEY, OUR RESPONSIBILITY</p>
-<h1 class="text-4xl md:text-6xl font-bold leading-tight">Reliable & Comfortable <span class="text-yellow-400">Cab Service</span></h1>
-<p class="text-gray-300 text-lg mt-5 max-w-xl">Book comfortable and affordable cabs for local trips, outstation journeys, round trips and airport transfers with RAN's CAB.</p>
-<div class="flex flex-wrap gap-4 mt-7">
-<a href="#booking" class="bg-yellow-400 hover:bg-yellow-500 text-gray-900 px-7 py-3 rounded-lg font-bold transition"><i class="fa-solid fa-calendar-check mr-2"></i>BOOK A CAB</a>
-<a href="cars.html" class="border border-white hover:bg-white hover:text-gray-900 px-7 py-3 rounded-lg font-bold transition">VIEW CARS</a>
+<!-- Hero Section -->
+<section class="relative h-[420px] flex items-center justify-center text-white text-center overflow-hidden">
+<img src="https://lh3.googleusercontent.com/rd-gg-dl/AAQ_wbG2k0orgWDxQjv9Z4GkBpJIv7dCCevSJglNRrCUdMz4Nz9ocTbBzOMRaKtsZV6IWzev3T98kSpS2lpFAI19Z4Z6el6rvtqVpAJLG735SeV7V6RIPt1v38gB6tJCrB5bZx_YgtzIlWELMh3UbZe-VuchLgGEYxUx4R_BLsG5itfP-WX74mRy7L1xGjh-wsWxbMMIEzMxOXvm_6burC8REmrCGlDkUAqtnj_XQ9s04Dide7Kz51ZsG96suFLbMtM9FIV6vm8omNk_V72Um9eUmb7K1geqTsYDzlfp7HlIpTOCvm8LXrU2f_ZkIA6u1YwseagG6p-DiFd_fpq99HNuPf7jLdDKoXtRjN1EVJcfrN-l173S7CEKV2mjvum5K3toyzuFgW9UFijewwxB2fLQhMBeKVgl8dFb9j3-t5PkYDs86i5Y5_eGUr29DPKlQmMaAAzJZvRfc5gaBU6KO_7FS4adYJ4HFpbsvE9hg7WR-6R9INXNjkmxUaVJuJ2FMrO3ujFxC1Cd9zJKz93hgA2bZmEcVeI9ioPNd442SNZuVL8JJdonusPOTi9fHSRtIQu-WlVXKuGrVVDiuSAWthzf0HeylhUrtkPlvQykqlfvnkRiU0cmnRoEXU3e3I4S85B5PHbbslzGl8F0rKs69_5L1jw_rTS-kiimQHH7uftVojlFD3Yb5Qr_WvnQWIyh5F-ChYoFdXzJSx4-kX8x4ihzecuEpvpyD547mVQYHFq38U2Dt5coe6FMIxAEvPaZRN79FT_nWMbSNxw1uJxRm8VBssGteac8kO4il0qAMM0dZUwf-ElpvxOybMkTgrJ6Sq7PYV_jt2js8IY4c6qofBZoED-iZP5dH02X5eoeJW11dwjXEzFCfmvfxqoalI-bgqCIhWjo--qZaww9LPa_LKhKVNsh2yayY_lk4qDpTOnYX_fEE_dIgy71toIfn80ij2YE6DBqeSOjj9uLOWmTU46PixbxLDehCwdUDWSSGskB0ULwUwP2_j7oi99k5_TPWKmyJYdT1Rqw0l4AD8otkp0IV9dfL8Cg5EKWSCvcom5lQetF6zdbIRSDncm61TS4QNdY74kKGhZLW0VHLF1BxElaBrhOSnyfi2JMy2h81dTNTLQSi5uR-7gRiODQcPGYFcGpALzZPDwzm5WzrcX3cGDexqIGdkPYfSPmlMwcxaSLKEWsmLzg4SABF4qrWwUwV7K1tGR356fe_QmCg0suQwdFQ-y5LtXqJb3R-ncMqvqsE913yTALkMReNIEJPRL_VZLI8nljHvVmYZMDolW_89tnCZnkvNen2_cNOiXuzwz7=s1024-rj" alt="RAN's CAB" class="absolute inset-0 w-full h-full object-cover">
+<div class="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/70"></div>
+<div class="absolute top-10 left-10 w-24 h-24 border border-yellow-400/30 rounded-full"></div>
+<div class="absolute bottom-8 right-10 w-32 h-32 border border-yellow-400/20 rounded-full"></div>
+<div class="relative z-10 px-4">
+<div class="w-14 h-14 mx-auto mb-5 rounded-2xl bg-yellow-400 flex items-center justify-center shadow-lg">
+<i class="fa-solid fa-taxi text-gray-900 text-xl"></i>
 </div>
-<div class="flex flex-wrap gap-8 mt-8 text-gray-300">
-<div><i class="fa-solid fa-shield-halved text-yellow-400 text-xl"></i><span class="ml-2">Safe Rides</span></div>
-<div><i class="fa-solid fa-clock text-yellow-400 text-xl"></i><span class="ml-2">On Time</span></div>
-<div><i class="fa-solid fa-headset text-yellow-400 text-xl"></i><span class="ml-2">24/7 Support</span></div>
-</div>
-</div>
-<div class="hidden lg:block">
-<img src="https://placehold.co/700x450/111827/facc15?text=RAN%27s+CAB" class="w-full rounded-2xl shadow-2xl" alt="RAN's CAB">
-</div>
+<p class="text-yellow-400 font-semibold text-lg mb-2">WELCOME TO RAN'S CAB</p>
+<h2 class="text-4xl md:text-6xl font-bold mb-5">Your Journey, Our Responsibility</h2>
+<p class="max-w-2xl mx-auto text-gray-200 text-lg mb-7">Reliable, comfortable and affordable cab services for every journey.</p>
+<div class="flex flex-wrap justify-center gap-4">
+<a href="cars.html" class="bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-bold px-7 py-3 rounded-lg shadow-lg hover:-translate-y-1 transition">Book a Cab</a>
+<a href="contact.html" class="border border-white hover:bg-white hover:text-gray-900 font-bold px-7 py-3 rounded-lg hover:-translate-y-1 transition">Contact Us</a>
 </div>
 </div>
 </section>
 
-<!-- ================= BOOKING ================= -->
 
-<section id="booking" class="py-16 bg-yellow-400">
-<div class="max-w-6xl mx-auto bg-white rounded-2xl shadow-xl p-6 md:p-8">
-<div class="text-center mb-8">
-<h2 class="text-3xl font-bold text-gray-900"><i class="fa-solid fa-car mr-2"></i>Book Your Ride</h2>
-<p class="text-gray-600 mt-2">Choose your trip type and enter your journey details</p>
-</div>
-
-<!-- TABS -->
-
-<div class="flex justify-center mb-8">
-<div class="flex flex-wrap justify-center border border-gray-300 rounded-xl overflow-hidden shadow-sm">
-<button type="button" class="booking-tab active px-5 md:px-7 py-3 font-semibold" data-tab="oneway">ONE WAY</button>
-<button type="button" class="booking-tab px-5 md:px-7 py-3 font-semibold" data-tab="round">ROUND TRIP</button>
-<button type="button" class="booking-tab px-5 md:px-7 py-3 font-semibold" data-tab="local">LOCAL</button>
-<button type="button" class="booking-tab px-5 md:px-7 py-3 font-semibold" data-tab="airport">AIRPORT</button>
-</div>
-</div>
-
-<!-- ONE WAY -->
-
-<div id="oneway" class="booking-content grid md:grid-cols-2 lg:grid-cols-4 gap-5">
+<!-- About Us -->
+<section class="max-w-7xl mx-auto py-16 px-4">
+<div class="grid md:grid-cols-2 gap-12 items-center">
 <div>
-<label class="block text-sm font-semibold mb-2"><i class="fa-solid fa-location-dot text-yellow-500 mr-2"></i>From</label>
-<div class="relative">
-<input id="onewayFrom" type="text" placeholder="Pickup location" class="w-full border border-gray-300 rounded-lg p-3 pr-11 outline-none focus:ring-2 focus:ring-yellow-400">
-<button type="button" onclick="getLocation('onewayFrom')" class="absolute right-3 top-3 text-gray-500 hover:text-yellow-500"><i class="fa-solid fa-crosshairs"></i></button>
-</div>
+<p class="text-yellow-500 font-semibold mb-2">ABOUT RAN'S CAB</p>
+<h2 class="text-3xl md:text-4xl font-bold mb-5">Travel With Comfort & Confidence</h2>
+<p class="text-gray-600 leading-relaxed mb-4">RAN's CAB provides reliable and comfortable transportation services for individuals, families and businesses.</p>
+<p class="text-gray-600 leading-relaxed mb-4">Whether you are travelling for work, visiting family, attending an event or exploring new places, our goal is to make every journey safe, convenient and comfortable.</p>
+<p class="text-gray-600 leading-relaxed mb-6">Our well-maintained vehicles and customer-focused service help us provide a smooth and hassle-free travel experience.</p>
+<a href="contact.html" class="inline-block bg-gray-900 hover:bg-gray-700 text-white px-6 py-3 rounded-lg transition">Get In Touch <i class="fa-solid fa-arrow-right ml-2"></i></a>
 </div>
 <div>
-<label class="block text-sm font-semibold mb-2"><i class="fa-solid fa-location-arrow text-red-500 mr-2"></i>To</label>
-<input id="onewayTo" type="text" placeholder="Drop location" class="w-full border border-gray-300 rounded-lg p-3 outline-none focus:ring-2 focus:ring-yellow-400">
+<img src="images/AboutUs/img1.jpg" alt="RAN's CAB" class="w-full h-96 object-cover rounded-2xl shadow-xl">
 </div>
-<div>
-<label class="block text-sm font-semibold mb-2"><i class="fa-solid fa-calendar text-yellow-500 mr-2"></i>Travel Date</label>
-<input id="onewayDate" type="date" class="booking-date w-full border border-gray-300 rounded-lg p-3 outline-none focus:ring-2 focus:ring-yellow-400">
-</div>
-<div>
-<label class="block text-sm font-semibold mb-2"><i class="fa-solid fa-clock text-yellow-500 mr-2"></i>Pickup Time</label>
-<input id="onewayTime" type="time" class="w-full border border-gray-300 rounded-lg p-3 outline-none focus:ring-2 focus:ring-yellow-400">
-</div>
-</div>
-
-<!-- ROUND TRIP -->
-
-<div id="round" class="booking-content hidden grid md:grid-cols-2 lg:grid-cols-5 gap-5">
-<div>
-<label class="block text-sm font-semibold mb-2">From</label>
-<input id="roundFrom" type="text" placeholder="Pickup location" class="w-full border border-gray-300 rounded-lg p-3 outline-none focus:ring-2 focus:ring-yellow-400">
-</div>
-<div>
-<label class="block text-sm font-semibold mb-2">To</label>
-<input id="roundTo" type="text" placeholder="Drop location" class="w-full border border-gray-300 rounded-lg p-3 outline-none focus:ring-2 focus:ring-yellow-400">
-</div>
-<div>
-<label class="block text-sm font-semibold mb-2">Pickup Date</label>
-<input id="roundPickupDate" type="date" class="booking-date w-full border border-gray-300 rounded-lg p-3 outline-none focus:ring-2 focus:ring-yellow-400">
-</div>
-<div>
-<label class="block text-sm font-semibold mb-2">Return Date</label>
-<input id="roundReturnDate" type="date" class="booking-date w-full border border-gray-300 rounded-lg p-3 outline-none focus:ring-2 focus:ring-yellow-400">
-</div>
-<div>
-<label class="block text-sm font-semibold mb-2">Pickup Time</label>
-<input id="roundTime" type="time" class="w-full border border-gray-300 rounded-lg p-3 outline-none focus:ring-2 focus:ring-yellow-400">
-</div>
-</div>
-
-<!-- LOCAL -->
-
-<div id="local" class="booking-content hidden grid md:grid-cols-2 lg:grid-cols-4 gap-5">
-<div>
-<label class="block text-sm font-semibold mb-2"><i class="fa-solid fa-city text-yellow-500 mr-2"></i>City</label>
-<input id="localCity" type="text" placeholder="Enter city" class="w-full border border-gray-300 rounded-lg p-3 outline-none focus:ring-2 focus:ring-yellow-400">
-</div>
-<div>
-<label class="block text-sm font-semibold mb-2">Date</label>
-<input id="localDate" type="date" class="booking-date w-full border border-gray-300 rounded-lg p-3 outline-none focus:ring-2 focus:ring-yellow-400">
-</div>
-<div>
-<label class="block text-sm font-semibold mb-2">Pickup Time</label>
-<input id="localTime" type="time" class="w-full border border-gray-300 rounded-lg p-3 outline-none focus:ring-2 focus:ring-yellow-400">
-</div>
-<div>
-<label class="block text-sm font-semibold mb-2">Duration</label>
-<select id="localDuration" class="w-full border border-gray-300 rounded-lg p-3 outline-none focus:ring-2 focus:ring-yellow-400">
-<option value="4 Hours">4 Hours</option>
-<option value="8 Hours">8 Hours</option>
-<option value="12 Hours">12 Hours</option>
-<option value="Full Day">Full Day</option>
-</select>
-</div>
-</div>
-
-<!-- AIRPORT -->
-
-<div id="airport" class="booking-content hidden grid md:grid-cols-2 lg:grid-cols-5 gap-5">
-<div>
-<label class="block text-sm font-semibold mb-2">Trip Type</label>
-<select id="airportTripType" class="w-full border border-gray-300 rounded-lg p-3 outline-none focus:ring-2 focus:ring-yellow-400" onchange="updateAirportFields()">
-<option value="Drop to Airport">Drop to Airport</option>
-<option value="Pickup from Airport">Pickup from Airport</option>
-</select>
-</div>
-<div>
-<label id="airportLocationLabel" class="block text-sm font-semibold mb-2"><i class="fa-solid fa-location-dot text-yellow-500 mr-2"></i>Pickup Address</label>
-<div class="relative">
-<input id="airportPickup" type="text" placeholder="Enter pickup address" class="w-full border border-gray-300 rounded-lg p-3 pr-11 outline-none focus:ring-2 focus:ring-yellow-400">
-<button type="button" onclick="getLocation('airportPickup')" class="absolute right-3 top-3 text-gray-500 hover:text-yellow-500"><i class="fa-solid fa-crosshairs"></i></button>
-</div>
-</div>
-<div>
-<label class="block text-sm font-semibold mb-2">Airport</label>
-<select id="airportName" class="w-full border border-gray-300 rounded-lg p-3 outline-none focus:ring-2 focus:ring-yellow-400">
-<option value="">Select Airport</option>
-<option value="Pune Airport">Pune Airport</option>
-<option value="Mumbai Airport">Mumbai Airport</option>
-</select>
-</div>
-<div>
-<label class="block text-sm font-semibold mb-2">Date</label>
-<input id="airportDate" type="date" class="booking-date w-full border border-gray-300 rounded-lg p-3 outline-none focus:ring-2 focus:ring-yellow-400">
-</div>
-<div>
-<label class="block text-sm font-semibold mb-2">Time</label>
-<input id="airportTime" type="time" class="w-full border border-gray-300 rounded-lg p-3 outline-none focus:ring-2 focus:ring-yellow-400">
-</div>
-</div>
-
-<!-- COMMON OPTIONS -->
-
-<div class="grid md:grid-cols-2 gap-5 mt-7">
-<div>
-<label class="block text-sm font-semibold mb-2"><i class="fa-solid fa-users text-yellow-500 mr-2"></i>Passengers</label>
-<select id="passengers" class="w-full border border-gray-300 rounded-lg p-3 outline-none focus:ring-2 focus:ring-yellow-400">
-<option value="4">1–4 Passengers</option>
-<option value="6">5–6 Passengers</option>
-<option value="16">7–16 Passengers</option>
-</select>
-<p class="text-xs text-gray-500 mt-1">Select the passenger range for your group.</p>
-</div>
-<div>
-<label class="block text-sm font-semibold mb-2"><i class="fa-solid fa-car text-yellow-500 mr-2"></i>Preferred Cab</label>
-<select id="cabType" class="w-full border border-gray-300 rounded-lg p-3 outline-none focus:ring-2 focus:ring-yellow-400">
-<option value="all">All Categories</option>
-<option value="SUV">SUV</option>
-<option value="Sedan">Sedan</option>
-<option value="Luxury">Luxury</option>
-<option value="Minibus">Minibus</option>
-</select>
-</div>
-</div>
-
-<!-- BUTTONS -->
-
-<div class="flex flex-col sm:flex-row justify-center items-center gap-4 mt-8">
-<button type="button" onclick="resetBooking()" class="border border-gray-400 hover:bg-gray-100 text-gray-700 px-6 py-3 rounded-lg font-semibold transition"><i class="fa-solid fa-rotate-left mr-2"></i>RESET</button>
-<button type="button" onclick="searchCabs()" class="bg-black hover:bg-gray-800 text-white px-10 py-3 rounded-lg font-bold text-lg transition-transform hover:scale-105"><i class="fa-solid fa-magnifying-glass mr-2"></i>SEARCH CABS</button>
-</div>
-<p class="text-center text-sm text-gray-500 mt-5"><i class="fa-solid fa-shield-halved mr-1"></i>Safe, comfortable and reliable rides with RAN's CAB</p>
 </div>
 </section>
 
-<!-- ================= WHY CHOOSE US ================= -->
-<section class="py-14 bg-gray-100">
-<div class="max-w-7xl mx-auto px-5">
-<h2 class="text-center text-3xl font-bold text-gray-900">Why Choose RAN's CAB?</h2>
-<div class="w-24 h-1 bg-gray-900 mx-auto my-3"></div>
-<p class="text-center text-gray-600 mb-10">We make every journey comfortable, safe and convenient.</p>
+<!-- Statistics -->
+<section class="bg-white py-14">
+<div class="max-w-7xl mx-auto px-4">
 <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-
-<!-- Safe & Secure -->
-<div class="feature-card group bg-gray-50 rounded-2xl p-6 border border-gray-200 border-t-4 border-blue-500 shadow-md hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
-<div class="flex items-center gap-4 mb-5">
-<div class="w-14 h-14 rounded-2xl bg-blue-100 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
-<i class="fa-solid fa-shield-halved text-2xl text-blue-500"></i>
+<div class="about-box bg-gray-50 rounded-xl shadow-md p-6 text-center border-t-4 border-gray-900">
+<i class="fa-solid fa-road text-4xl text-yellow-500"></i>
+<h4 class="text-3xl font-bold mt-4">200+</h4>
+<p class="text-gray-500 mt-2">Successful Trips</p>
 </div>
-<h3 class="text-lg font-bold text-gray-900">Safe & Secure</h3>
+<div class="about-box bg-gray-50 rounded-xl shadow-md p-6 text-center border-t-4 border-gray-900">
+<i class="fa-solid fa-car text-4xl text-yellow-500"></i>
+<h4 class="text-3xl font-bold mt-4">20+</h4>
+<p class="text-gray-500 mt-2">Cars Available</p>
 </div>
-<p class="text-gray-600 text-sm leading-relaxed">Your safety is our first priority on every journey.</p>
+<div class="about-box bg-gray-50 rounded-xl shadow-md p-6 text-center border-t-4 border-gray-900">
+<i class="fa-solid fa-users text-4xl text-yellow-500"></i>
+<h4 class="text-3xl font-bold mt-4">100+</h4>
+<p class="text-gray-500 mt-2">Happy Customers</p>
 </div>
-
-<!-- On-Time Service -->
-<div class="feature-card group bg-gray-50 rounded-2xl p-6 border border-gray-200 border-t-4 border-green-500 shadow-md hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
-<div class="flex items-center gap-4 mb-5">
-<div class="w-14 h-14 rounded-2xl bg-green-100 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
-<i class="fa-solid fa-clock text-2xl text-green-500"></i>
+<div class="about-box bg-gray-50 rounded-xl shadow-md p-6 text-center border-t-4 border-gray-900">
+<i class="fa-solid fa-headset text-4xl text-yellow-500"></i>
+<h4 class="text-3xl font-bold mt-4">24/7</h4>
+<p class="text-gray-500 mt-2">Customer Support</p>
 </div>
-<h3 class="text-lg font-bold text-gray-900">On-Time Service</h3>
-</div>
-<p class="text-gray-600 text-sm leading-relaxed">We value your time and provide punctual pickup service.</p>
-</div>
-
-<!-- Affordable Rates -->
-<div class="feature-card group bg-gray-50 rounded-2xl p-6 border border-gray-200 border-t-4 border-orange-500 shadow-md hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
-<div class="flex items-center gap-4 mb-5">
-<div class="w-14 h-14 rounded-2xl bg-orange-100 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
-<i class="fa-solid fa-indian-rupee-sign text-2xl text-orange-500"></i>
-</div>
-<h3 class="text-lg font-bold text-gray-900">Affordable Rates</h3>
-</div>
-<p class="text-gray-600 text-sm leading-relaxed">Comfortable rides at competitive and transparent prices.</p>
-</div>
-
-<!-- 24/7 Support -->
-<div class="feature-card group bg-gray-50 rounded-2xl p-6 border border-gray-200 border-t-4 border-purple-500 shadow-md hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
-<div class="flex items-center gap-4 mb-5">
-<div class="w-14 h-14 rounded-2xl bg-purple-100 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
-<i class="fa-solid fa-headset text-2xl text-purple-500"></i>
-</div>
-<h3 class="text-lg font-bold text-gray-900">24/7 Support</h3>
-</div>
-<p class="text-gray-600 text-sm leading-relaxed">Our support team is available whenever you need us.</p>
-</div>
-
 </div>
 </div>
 </section>
 
-<!-- ================= FEATURED CARS ================= -->
-
-<section class="max-w-7xl mx-auto py-14 px-5">
-<h2 class="text-center text-3xl font-bold">Featured Cars</h2>
+<!-- Why Choose Us -->
+<section class="max-w-7xl mx-auto py-16 px-4">
+<h2 class="text-center text-3xl font-bold">Why Choose RAN's CAB?</h2>
 <div class="w-24 h-1 bg-gray-900 mx-auto my-3"></div>
-<p class="text-center text-gray-600 mb-10">Choose the perfect car for your journey.</p>
-<div class="grid md:grid-cols-3 gap-7">
-
-<!-- CAR 1 -->
-
-<div class="car-card bg-white rounded-xl shadow p-5">
-<img src="https://dashboard.manojtravels.in/assets/uploads/1722178795.png" 
-class="w-full h-48 object-cover rounded-lg mb-5" alt="Maruti Dzire">
-<h3 class="text-xl font-bold">Maruti Dzire</h3>
-<p class="text-gray-500 mt-1">Comfortable sedan for local and outstation travel.</p>
-<div class="flex justify-between text-sm text-gray-600 mt-4">
-<span><i class="fa-solid fa-users mr-1"></i>4+1</span>
-<span><i class="fa-solid fa-snowflake mr-1"></i>AC</span>
-<span><i class="fa-solid fa-road mr-1"></i>₹13/km</span>
+<p class="text-center text-gray-600 mt-3 mb-10">We focus on making every ride safe, comfortable and convenient.</p>
+<div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-7">
+<div class="feature-card bg-white rounded-xl shadow-md p-7 text-center">
+<div class="w-16 h-16 mx-auto rounded-full bg-yellow-400 flex items-center justify-center"><i class="fa-solid fa-shield-halved text-2xl"></i></div>
+<h3 class="text-xl font-bold mt-5">Safe & Reliable</h3>
+<p class="text-gray-600 mt-3">Your safety is our priority. We aim to provide dependable transportation for every journey.</p>
 </div>
-<div class="flex justify-between items-center mt-5">
-<div><span class="text-2xl font-bold">₹13</span><span class="text-gray-500">/ km</span></div>
-<button onclick="openBooking('Maruti Dzire','₹13 / km','https://dashboard.manojtravels.in/assets/uploads/1722178795.png')" class="bg-yellow-400 hover:bg-yellow-500 px-5 py-2 rounded-lg font-semibold">Book Now</button>
+<div class="feature-card bg-white rounded-xl shadow-md p-7 text-center">
+<div class="w-16 h-16 mx-auto rounded-full bg-yellow-400 flex items-center justify-center"><i class="fa-solid fa-car-side text-2xl"></i></div>
+<h3 class="text-xl font-bold mt-5">Well Maintained Cars</h3>
+<p class="text-gray-600 mt-3">Our vehicles are maintained regularly to provide a comfortable travel experience.</p>
 </div>
+<div class="feature-card bg-white rounded-xl shadow-md p-7 text-center">
+<div class="w-16 h-16 mx-auto rounded-full bg-yellow-400 flex items-center justify-center"><i class="fa-solid fa-indian-rupee-sign text-2xl"></i></div>
+<h3 class="text-xl font-bold mt-5">Affordable Pricing</h3>
+<p class="text-gray-600 mt-3">Choose from affordable rental options designed to provide value for your money.</p>
 </div>
-
-<!-- CAR 2 -->
-
-<div class="car-card bg-white rounded-xl shadow p-5">
-<img src="https://stimg.cardekho.com/images/carexteriorimages/930x620/Maruti/Ertiga-Tour/9617/1762858404297/front-left-side-47.jpg" class="w-full h-48 object-cover rounded-lg mb-5" alt="Maruti Ertiga">
-<h3 class="text-xl font-bold">Maruti Ertiga</h3>
-<p class="text-gray-500 mt-1">Spacious SUV ideal for families and group travel.</p>
-<div class="flex justify-between text-sm text-gray-600 mt-4">
-<span><i class="fa-solid fa-users mr-1"></i>6+1</span>
-<span><i class="fa-solid fa-snowflake mr-1"></i>AC</span>
-<span><i class="fa-solid fa-road mr-1"></i>₹15/km</span>
+<div class="feature-card bg-white rounded-xl shadow-md p-7 text-center">
+<div class="w-16 h-16 mx-auto rounded-full bg-yellow-400 flex items-center justify-center"><i class="fa-solid fa-clock text-2xl"></i></div>
+<h3 class="text-xl font-bold mt-5">On-Time Service</h3>
+<p class="text-gray-600 mt-3">We value your time and work to make your pickup and travel experience smooth.</p>
 </div>
-<div class="flex justify-between items-center mt-5">
-<div><span class="text-2xl font-bold">₹15</span><span class="text-gray-500">/ km</span></div>
-<button onclick="openBooking('Maruti Ertiga','₹15 / km','https://stimg.cardekho.com/images/carexteriorimages/930x620/Maruti/Ertiga-Tour/9617/1762858404297/front-left-side-47.jpg')" class="bg-yellow-400 hover:bg-yellow-500 px-5 py-2 rounded-lg font-semibold">Book Now</button>
+<div class="feature-card bg-white rounded-xl shadow-md p-7 text-center">
+<div class="w-16 h-16 mx-auto rounded-full bg-yellow-400 flex items-center justify-center"><i class="fa-solid fa-phone-volume text-2xl"></i></div>
+<h3 class="text-xl font-bold mt-5">Easy Booking</h3>
+<p class="text-gray-600 mt-3">Contact us or choose your preferred vehicle and make your booking easily.</p>
 </div>
+<div class="feature-card bg-white rounded-xl shadow-md p-7 text-center">
+<div class="w-16 h-16 mx-auto rounded-full bg-yellow-400 flex items-center justify-center"><i class="fa-solid fa-heart text-2xl"></i></div>
+<h3 class="text-xl font-bold mt-5">Customer First</h3>
+<p class="text-gray-600 mt-3">We focus on customer satisfaction and strive to make every journey enjoyable.</p>
 </div>
-
-<!-- CAR 3 -->
-
-<div class="car-card bg-white rounded-xl shadow p-5">
-<img src="https://images.financialexpressdigital.com/2022/11/Force-Urbania-Van.jpg" class="w-full h-48 object-cover rounded-lg mb-5" alt="Force Urbania">
-<h3 class="text-xl font-bold">Force Urbania</h3>
-<p class="text-gray-500 mt-1">Premium minibus for large families and groups.</p>
-<div class="flex justify-between text-sm text-gray-600 mt-4">
-<span><i class="fa-solid fa-users mr-1"></i>16+1</span>
-<span><i class="fa-solid fa-snowflake mr-1"></i>AC</span>
-<span><i class="fa-solid fa-road mr-1"></i>₹35/km</span>
-</div>
-<div class="flex justify-between items-center mt-5">
-<div><span class="text-2xl font-bold">₹35</span><span class="text-gray-500">/ km</span></div>
-<button onclick="openBooking('Force Urbania','₹35 / km','https://images.financialexpressdigital.com/2022/11/Force-Urbania-Van.jpg')" class="bg-yellow-400 hover:bg-yellow-500 px-5 py-2 rounded-lg font-semibold">Book Now</button>
-</div>
-</div>
-
-</div>
-<div class="text-center mt-10">
-<a href="cars.html" class="inline-block border border-gray-800 px-6 py-3 font-bold hover:bg-gray-800 hover:text-white transition">VIEW ALL CARS <i class="fa-solid fa-arrow-right ml-2"></i></a>
 </div>
 </section>
 
-<!-- ================= FACILITIES ================= -->
-<section class="py-14 bg-gray-100">
-<div class="max-w-7xl mx-auto px-5">
-<h2 class="text-center text-3xl font-bold text-gray-900">Our Facilities</h2>
-<div class="w-24 h-1 bg-gray-900 mx-auto my-3"></div>
+<!-- Services -->
+<section class="bg-gray-900 text-white py-16">
+<div class="max-w-7xl mx-auto px-4">
+<h2 class="text-center text-3xl font-bold">Our Services</h2>
+<div class="w-24 h-1 bg-yellow-400 mx-auto my-3"></div>
 <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-10">
-
-<!-- Free Wi-Fi -->
-<div class="feature-card group bg-white rounded-2xl shadow-md p-6 border border-gray-200 border-t-4 border-blue-500 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
-<div class="flex items-center gap-4 mb-4">
-<div class="w-14 h-14 rounded-2xl bg-blue-100 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
-<i class="fa-solid fa-wifi text-2xl text-blue-500"></i>
-</div>
-<h3 class="font-bold text-lg text-gray-900">Free Wi-Fi</h3>
-</div>
-<p class="text-gray-600 text-sm leading-relaxed">Stay connected during your journey.</p>
-</div>
-
-<!-- Air Conditioned -->
-<div class="feature-card group bg-white rounded-2xl shadow-md p-6 border border-gray-200 border-t-4 border-sky-500 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
-<div class="flex items-center gap-4 mb-4">
-<div class="w-14 h-14 rounded-2xl bg-sky-100 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
-<i class="fa-solid fa-snowflake text-2xl text-sky-500"></i>
-</div>
-<h3 class="font-bold text-lg text-gray-900">Air Conditioned</h3>
-</div>
-<p class="text-gray-600 text-sm leading-relaxed">Enjoy a comfortable and cool ride.</p>
-</div>
-
-<!-- 24/7 Service -->
-<div class="feature-card group bg-white rounded-2xl shadow-md p-6 border border-gray-200 border-t-4 border-green-500 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
-<div class="flex items-center gap-4 mb-4">
-<div class="w-14 h-14 rounded-2xl bg-green-100 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
-<i class="fa-solid fa-clock text-2xl text-green-500"></i>
-</div>
-<h3 class="font-bold text-lg text-gray-900">24/7 Service</h3>
-</div>
-<p class="text-gray-600 text-sm leading-relaxed">Book your ride whenever you need it.</p>
-</div>
-
-<!-- Professional Drivers -->
-<div class="feature-card group bg-white rounded-2xl shadow-md p-6 border border-gray-200 border-t-4 border-purple-500 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
-<div class="flex items-center gap-4 mb-4">
-<div class="w-14 h-14 rounded-2xl bg-purple-100 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
-<i class="fa-solid fa-user-tie text-2xl text-purple-500"></i>
-</div>
-<h3 class="font-bold text-lg text-gray-900">Professional Drivers</h3>
-</div>
-<p class="text-gray-600 text-sm leading-relaxed">Experienced drivers for a safe journey.</p>
-</div>
-
-</div>
-
-<div class="text-center mt-8">
-<a href="facilities.html" class="inline-flex items-center gap-2 border border-gray-800 px-6 py-2.5 rounded-lg font-bold hover:bg-gray-800 hover:text-white hover:-translate-y-1 transition-all duration-300">MORE FACILITIES <i class="fa-solid fa-arrow-right"></i></a>
+<div class="text-center p-6"><i class="fa-solid fa-city text-4xl text-yellow-400"></i><h3 class="font-bold text-xl mt-4">Local Travel</h3><p class="text-gray-400 mt-2">Comfortable rides for your daily travel.</p></div>
+<div class="text-center p-6"><i class="fa-solid fa-plane-departure text-4xl text-yellow-400"></i><h3 class="font-bold text-xl mt-4">Airport Transfer</h3><p class="text-gray-400 mt-2">Convenient pickup and drop services.</p></div>
+<div class="text-center p-6"><i class="fa-solid fa-route text-4xl text-yellow-400"></i><h3 class="font-bold text-xl mt-4">Outstation Trips</h3><p class="text-gray-400 mt-2">Plan comfortable long-distance journeys.</p></div>
+<div class="text-center p-6"><i class="fa-solid fa-calendar-days text-4xl text-yellow-400"></i><h3 class="font-bold text-xl mt-4">Car Rental</h3><p class="text-gray-400 mt-2">Choose a car according to your requirements.</p></div>
 </div>
 </div>
 </section>
 
-<!-- ================= TESTIMONIALS ================= -->
-<section class="py-14 bg-gray-100">
-<div class="max-w-7xl mx-auto px-5">
+<!-- Management Team -->
+<section class="max-w-7xl mx-auto py-16 px-4">
+<h2 class="text-center text-3xl font-bold">Management Team</h2>
+<div class="w-24 h-1 bg-gray-900 mx-auto my-3"></div>
+<p class="text-center text-gray-600 mt-3 mb-10">Meet the people behind RAN's CAB.</p>
+<div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+<div class="team-card bg-white rounded-xl shadow-lg overflow-hidden text-center">
+<img src="images/AboutUs/team1.jpg" alt="Founder" class="w-full h-72 object-cover">
+<div class="p-5"><h4 class="text-xl font-bold">Team Member</h4><p class="text-gray-500 mt-1">Founder & Manager</p><div class="flex justify-center gap-4 mt-4"><a href="#" class="text-gray-600 hover:text-blue-600"><i class="fa-brands fa-facebook"></i></a><a href="#" class="text-gray-600 hover:text-blue-500"><i class="fa-brands fa-linkedin"></i></a></div></div>
+</div>
+<div class="team-card bg-white rounded-xl shadow-lg overflow-hidden text-center">
+<img src="images/AboutUs/team2.jpg" alt="Operations Manager" class="w-full h-72 object-cover">
+<div class="p-5"><h4 class="text-xl font-bold">Team Member</h4><p class="text-gray-500 mt-1">Operations Manager</p><div class="flex justify-center gap-4 mt-4"><a href="#" class="text-gray-600 hover:text-blue-600"><i class="fa-brands fa-facebook"></i></a><a href="#" class="text-gray-600 hover:text-blue-500"><i class="fa-brands fa-linkedin"></i></a></div></div>
+</div>
+<div class="team-card bg-white rounded-xl shadow-lg overflow-hidden text-center">
+<img src="images/AboutUs/team3.jpg" alt="Customer Support" class="w-full h-72 object-cover">
+<div class="p-5"><h4 class="text-xl font-bold">Team Member</h4><p class="text-gray-500 mt-1">Customer Support</p><div class="flex justify-center gap-4 mt-4"><a href="#" class="text-gray-600 hover:text-blue-600"><i class="fa-brands fa-facebook"></i></a><a href="#" class="text-gray-600 hover:text-blue-500"><i class="fa-brands fa-linkedin"></i></a></div></div>
+</div>
+</div>
+</section>
+
+<!-- Testimonials -->
+<section class="bg-white py-16">
+<div class="max-w-7xl mx-auto px-4">
 <h2 class="text-center text-3xl font-bold">What Our Customers Say</h2>
 <div class="w-24 h-1 bg-gray-900 mx-auto my-3"></div>
-
-<div class="relative mt-10">
-<div id="testimonialViewport" class="overflow-hidden max-w-6xl mx-auto">
-<div id="testimonialTrack" class="flex">
-
-<div class="testimonial-slide min-w-full md:min-w-[33.3333%] px-3">
-<div class="bg-white p-6 rounded-2xl shadow-md border border-gray-200 h-full">
-<div class="flex items-center gap-1 text-yellow-400 mb-4">
-<i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-</div>
-<p class="text-gray-600 leading-relaxed">"Very comfortable ride and the driver was punctual. Great experience."</p>
-<h4 class="font-bold mt-5 text-gray-900">Rahul</h4>
+<div class="grid md:grid-cols-3 gap-7 mt-10">
+<div class="review-card bg-gray-50 rounded-xl shadow-md p-7">
+<div class="text-yellow-400 mb-3"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+<p class="text-gray-600">"Very comfortable car and excellent service. The booking process was simple and convenient."</p>
+<h4 class="font-bold mt-5">Customer Name</h4>
 <p class="text-sm text-gray-500">Pune</p>
 </div>
-</div>
-
-<div class="testimonial-slide min-w-full md:min-w-[33.3333%] px-3">
-<div class="bg-white p-6 rounded-2xl shadow-md border border-gray-200 h-full">
-<div class="flex items-center gap-1 text-yellow-400 mb-4">
-<i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-</div>
-<p class="text-gray-600 leading-relaxed">"Booked an airport cab. The service was smooth and affordable."</p>
-<h4 class="font-bold mt-5 text-gray-900">Sneha</h4>
+<div class="review-card bg-gray-50 rounded-xl shadow-md p-7">
+<div class="text-yellow-400 mb-3"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+<p class="text-gray-600">"The car was clean and well maintained. I would definitely use RAN's CAB again."</p>
+<h4 class="font-bold mt-5">Customer Name</h4>
 <p class="text-sm text-gray-500">Pune</p>
 </div>
-</div>
-
-<div class="testimonial-slide min-w-full md:min-w-[33.3333%] px-3">
-<div class="bg-white p-6 rounded-2xl shadow-md border border-gray-200 h-full">
-<div class="flex items-center gap-1 text-yellow-400 mb-4">
-<i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-</div>
-<p class="text-gray-600 leading-relaxed">"Clean car, polite driver and excellent service. Would definitely book again."</p>
-<h4 class="font-bold mt-5 text-gray-900">Amit</h4>
+<div class="review-card bg-gray-50 rounded-xl shadow-md p-7">
+<div class="text-yellow-400 mb-3"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+<p class="text-gray-600">"Good service, affordable pricing and very helpful support team."</p>
+<h4 class="font-bold mt-5">Customer Name</h4>
 <p class="text-sm text-gray-500">Pune</p>
-</div>
-</div>
-
-<div class="testimonial-slide min-w-full md:min-w-[33.3333%] px-3">
-<div class="bg-white p-6 rounded-2xl shadow-md border border-gray-200 h-full">
-<div class="flex items-center gap-1 text-yellow-400 mb-4">
-<i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-</div>
-<p class="text-gray-600 leading-relaxed">"Very comfortable ride and the driver was punctual. Great experience."</p>
-<h4 class="font-bold mt-5 text-gray-900">Rahul</h4>
-<p class="text-sm text-gray-500">Pune</p>
-</div>
-</div>
-
-<div class="testimonial-slide min-w-full md:min-w-[33.3333%] px-3">
-<div class="bg-white p-6 rounded-2xl shadow-md border border-gray-200 h-full">
-<div class="flex items-center gap-1 text-yellow-400 mb-4">
-<i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-</div>
-<p class="text-gray-600 leading-relaxed">"Booked an airport cab. The service was smooth and affordable."</p>
-<h4 class="font-bold mt-5 text-gray-900">Sneha</h4>
-<p class="text-sm text-gray-500">Pune</p>
-</div>
-</div>
-
-<div class="testimonial-slide min-w-full md:min-w-[33.3333%] px-3">
-<div class="bg-white p-6 rounded-2xl shadow-md border border-gray-200 h-full">
-<div class="flex items-center gap-1 text-yellow-400 mb-4">
-<i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-</div>
-<p class="text-gray-600 leading-relaxed">"Clean car, polite driver and excellent service. Would definitely book again."</p>
-<h4 class="font-bold mt-5 text-gray-900">Amit</h4>
-<p class="text-sm text-gray-500">Pune</p>
-</div>
-</div>
-
-</div>
-</div>
-
-<button id="testimonialPrev" class="absolute left-0 md:-left-4 top-1/2 -translate-y-1/2 w-10 h-10 bg-gray-900 text-white rounded-full shadow-lg hover:bg-yellow-400 hover:text-gray-900 transition z-10">
-<i class="fa-solid fa-chevron-left"></i>
-</button>
-
-<button id="testimonialNext" class="absolute right-0 md:-right-4 top-1/2 -translate-y-1/2 w-10 h-10 bg-gray-900 text-white rounded-full shadow-lg hover:bg-yellow-400 hover:text-gray-900 transition z-10">
-<i class="fa-solid fa-chevron-right"></i>
-</button>
-</div>
-
-<div class="flex justify-center gap-2 mt-7">
-<button class="testimonial-dot w-3 h-3 rounded-full bg-gray-900 transition" data-index="0"></button>
-<button class="testimonial-dot w-3 h-3 rounded-full bg-gray-300 transition" data-index="1"></button>
-<button class="testimonial-dot w-3 h-3 rounded-full bg-gray-300 transition" data-index="2"></button>
-</div>
-</div>
-</section>
-
-<script>
-const testimonialTrack=document.getElementById("testimonialTrack");
-const testimonialPrev=document.getElementById("testimonialPrev");
-const testimonialNext=document.getElementById("testimonialNext");
-const testimonialDots=document.querySelectorAll(".testimonial-dot");
-const testimonialTotal=3;
-let testimonialIndex=0;
-let testimonialTimer;
-
-function testimonialStep(){
-return window.innerWidth<768?100:100/3;
-}
-
-function updateTestimonialDots(){
-let dotIndex=testimonialIndex%testimonialTotal;
-testimonialDots.forEach((dot,index)=>{
-dot.classList.toggle("bg-gray-900",index===dotIndex);
-dot.classList.toggle("bg-gray-300",index!==dotIndex);
-});
-}
-
-function moveTestimonials(){
-testimonialTrack.style.transition="transform 500ms ease-in-out";
-testimonialTrack.style.transform=`translateX(-${testimonialIndex*testimonialStep()}%)`;
-updateTestimonialDots();
-}
-
-function nextTestimonial(){
-testimonialIndex++;
-moveTestimonials();
-if(testimonialIndex===testimonialTotal){
-setTimeout(()=>{
-testimonialTrack.style.transition="none";
-testimonialIndex=0;
-testimonialTrack.style.transform="translateX(0)";
-updateTestimonialDots();
-},500);
-}
-}
-
-function previousTestimonial(){
-if(testimonialIndex===0){
-testimonialTrack.style.transition="none";
-testimonialIndex=testimonialTotal;
-testimonialTrack.style.transform=`translateX(-${testimonialIndex*testimonialStep()}%)`;
-requestAnimationFrame(()=>{
-requestAnimationFrame(()=>{
-testimonialIndex--;
-moveTestimonials();
-});
-});
-}else{
-testimonialIndex--;
-moveTestimonials();
-}
-}
-
-testimonialNext.addEventListener("click",()=>{
-nextTestimonial();
-clearInterval(testimonialTimer);
-startTestimonialAutoSlide();
-});
-
-testimonialPrev.addEventListener("click",()=>{
-previousTestimonial();
-clearInterval(testimonialTimer);
-startTestimonialAutoSlide();
-});
-
-testimonialDots.forEach(dot=>{
-dot.addEventListener("click",()=>{
-testimonialIndex=parseInt(dot.dataset.index);
-moveTestimonials();
-clearInterval(testimonialTimer);
-startTestimonialAutoSlide();
-});
-});
-
-function startTestimonialAutoSlide(){
-testimonialTimer=setInterval(nextTestimonial,4000);
-}
-
-window.addEventListener("resize",()=>{
-testimonialTrack.style.transition="none";
-testimonialTrack.style.transform=`translateX(-${testimonialIndex*testimonialStep()}%)`;
-});
-
-startTestimonialAutoSlide();
-</script>
-
-<!-- ================= FAQ ================= -->
-
-<section class="py-14 bg-gray-100">
-<div class="max-w-4xl mx-auto px-5">
-<h2 class="text-center text-3xl font-bold">Frequently Asked Questions</h2>
-<div class="w-24 h-1 bg-gray-900 mx-auto my-3"></div>
-<div class="space-y-4 mt-10">
-<div class="bg-white rounded-lg shadow">
-<button onclick="toggleFAQ(1)" class="w-full text-left p-5 font-semibold flex justify-between"><span>How can I book a cab?</span><i id="faqIcon1" class="fa-solid fa-plus"></i></button>
-<p id="faq1" class="hidden px-5 pb-5 text-gray-600">Select your trip type above, enter your journey details and click Search Cabs. You can then select your preferred car.</p>
-</div>
-<div class="bg-white rounded-lg shadow">
-<button onclick="toggleFAQ(2)" class="w-full text-left p-5 font-semibold flex justify-between"><span>Do you provide airport transfers?</span><i id="faqIcon2" class="fa-solid fa-plus"></i></button>
-<p id="faq2" class="hidden px-5 pb-5 text-gray-600">Yes. Select the Airport option in the booking section to request an airport pickup or drop.</p>
-</div>
-<div class="bg-white rounded-lg shadow">
-<button onclick="toggleFAQ(3)" class="w-full text-left p-5 font-semibold flex justify-between"><span>Can I book a cab for an outstation trip?</span><i id="faqIcon3" class="fa-solid fa-plus"></i></button>
-<p id="faq3" class="hidden px-5 pb-5 text-gray-600">Yes. You can use the One Way or Round Trip options for outstation journeys.</p>
 </div>
 </div>
 </div>
 </section>
 
-<!-- ================= BOOKING MODAL ================= -->
+<!-- CTA -->
+<section class="bg-gray-400 py-14 px-4 text-center">
+<h2 class="text-3xl md:text-4xl font-bold">Ready For Your Next Journey?</h2>
+<p class="text-gray-800 mt-3 mb-6">Choose your car and start your journey with RAN's CAB.</p>
+<div class="flex flex-wrap justify-center gap-4">
+<a href="cars.html" class="bg-gray-900 hover:bg-gray-700 text-white px-7 py-3 rounded-lg font-semibold transition">View Cars</a>
+<a href="contact.html" class="bg-white hover:bg-gray-100 text-gray-900 px-7 py-3 rounded-lg font-semibold transition">Contact Us</a>
+</div>
+</section>
 
-<div id="bookingModal" class="fixed inset-0 bg-black bg-opacity-60 hidden items-center justify-center z-[999] p-4">
-<div class="bg-white w-full max-w-2xl rounded-2xl shadow-2xl overflow-hidden max-h-[90vh] overflow-y-auto">
-<div class="flex justify-between items-center border-b p-5">
-<h2 class="text-xl font-bold"><i class="fa-solid fa-car text-yellow-500 mr-2"></i>Complete Your Booking</h2>
-<button onclick="closeBooking()" class="text-gray-500 hover:text-red-500 text-xl"><i class="fa-solid fa-xmark"></i></button>
-</div>
-<form id="bookingForm" class="p-6">
-<div class="bg-gray-100 p-4 rounded-lg flex items-center gap-4 mb-6">
-<img id="modalCarImage" class="w-28 h-20 object-cover rounded-lg" alt="Selected car">
-<div>
-<h3 id="modalCarName" class="font-bold text-lg"></h3>
-<p id="modalCarPrice" class="text-gray-600"></p>
-</div>
-</div>
-<input type="hidden" id="selectedCar">
-<input type="hidden" id="selectedPrice">
-<h3 class="font-semibold text-lg mb-3">Customer Details</h3>
-<div class="grid md:grid-cols-2 gap-4 mb-6">
-<input type="text" id="customerName" placeholder="Full Name" required class="border border-gray-300 p-3 rounded-lg outline-none focus:ring-2 focus:ring-yellow-400">
-<input type="email" id="customerEmail" placeholder="Email Address" required class="border border-gray-300 p-3 rounded-lg outline-none focus:ring-2 focus:ring-yellow-400">
-<input type="tel" id="customerPhone" placeholder="Phone Number" required class="border border-gray-300 p-3 rounded-lg outline-none focus:ring-2 focus:ring-yellow-400">
-</div>
-<h3 class="font-semibold text-lg mb-3">Trip Details</h3>
-<div class="grid md:grid-cols-2 gap-4">
-<input type="text" id="pickupLocation" placeholder="Pickup Location" required class="border border-gray-300 p-3 rounded-lg outline-none focus:ring-2 focus:ring-yellow-400">
-<input type="text" id="dropLocation" placeholder="Drop Location" required class="border border-gray-300 p-3 rounded-lg outline-none focus:ring-2 focus:ring-yellow-400">
-<input type="date" id="bookingDate" required class="border border-gray-300 p-3 rounded-lg outline-none focus:ring-2 focus:ring-yellow-400">
-<input type="time" id="bookingTime" required class="border border-gray-300 p-3 rounded-lg outline-none focus:ring-2 focus:ring-yellow-400">
-</div>
-<div class="flex gap-4 mt-6">
-<button type="button" onclick="closeBooking()" class="w-1/2 bg-gray-200 hover:bg-gray-300 py-3 rounded-lg font-semibold">Cancel</button>
-<button type="submit" class="w-1/2 bg-yellow-400 hover:bg-yellow-500 py-3 rounded-lg font-semibold">Confirm Booking</button>
-</div>
-</form>
-</div>
+<!-- Floating Call + WhatsApp -->
+<div class="fixed bottom-6 right-6 flex flex-col gap-3 z-50">
+<a href="tel:+919579645381" class="w-14 h-14 bg-blue-600 hover:bg-blue-700 text-white rounded-full flex items-center justify-center shadow-lg transition-transform hover:scale-110" title="Call RAN's CAB"><i class="fa-solid fa-phone text-xl"></i></a>
+<a href="https://wa.me/919579645381" target="_blank" class="w-14 h-14 bg-green-500 hover:bg-green-600 text-white rounded-full flex items-center justify-center shadow-lg transition-transform hover:scale-110" title="Chat on WhatsApp"><i class="fa-brands fa-whatsapp text-2xl"></i></a>
 </div>
 
 <!-- Back To Top -->
-
 <button onclick="window.scrollTo({top:0,behavior:'smooth'})" class="fixed bottom-6 left-6 w-12 h-12 bg-gray-900 hover:bg-gray-700 text-white rounded-full shadow-lg z-50" title="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
 
 <!-- ================= FOOTER ================= -->
 
 <footer class="bg-yellow-400">
+
 <div class="max-w-7xl mx-auto px-6 py-12 grid md:grid-cols-3 gap-10">
+
 <div>
-<h3 class="text-2xl font-bold mb-4"><i class="fa-solid fa-taxi mr-2"></i>RAN's CAB</h3>
-<p class="text-gray-700">Your reliable cab rental service in Pune. Book comfortable and affordable cars for local, outstation and airport journeys.</p>
+
+<h3 class="text-2xl font-bold mb-4">
+<i class="fa-solid fa-taxi mr-2"></i>RAN's CAB
+</h3>
+
+<p class="text-gray-700">
+Your reliable cab rental service in Pune. Book comfortable and affordable cars for local, outstation and airport journeys.
+</p>
+
 <h4 class="text-lg font-bold mt-4">Follow Us</h4>
 <div class="flex gap-4 mt-3">
-<a href="#" class="text-2xl hover:text-blue-600"><i class="fa-brands fa-facebook"></i></a>
-<a href="#" class="text-2xl hover:text-pink-600"><i class="fa-brands fa-instagram"></i></a>
-<a href="#" class="text-2xl hover:text-blue-500"><i class="fa-brands fa-twitter"></i></a>
+
+<a href="#" class="text-2xl hover:text-blue-600">
+<i class="fa-brands fa-facebook"></i>
+</a>
+
+<a href="#" class="text-2xl hover:text-pink-600">
+<i class="fa-brands fa-instagram"></i>
+</a>
+
+<a href="#" class="text-2xl hover:text-blue-500">
+<i class="fa-brands fa-twitter"></i>
+</a>
+
 </div>
+
 </div>
+
 <div>
+
 <h4 class="text-lg font-bold mb-4">Quick Links</h4>
+
 <div class="flex flex-col space-y-3">
+
 <a href="index.html" class="hover:text-blue-600">Home</a>
 <a href="cars.html" class="hover:text-blue-600">Cars</a>
 <a href="facilities.html" class="hover:text-blue-600">Facilities</a>
 <a href="contact.html" class="hover:text-blue-600">Contact Us</a>
 <a href="about.html" class="hover:text-blue-600">About Us</a>
+
 </div>
+
 </div>
+
 <div>
+
 <h4 class="text-lg font-bold mb-4">Contact Us</h4>
-<p class="mb-3"><i class="fa-solid fa-phone mr-2"></i><a href="tel:+919579645381">+91 9579645381</a></p>
-<p class="mb-3"><i class="fa-solid fa-phone mr-2"></i><a href="tel:+917020310485">+91 7020310485</a></p>
-<p class="mb-3"><i class="fa-solid fa-envelope mr-2"></i>services@ranacab.com</p>
-<p><i class="fa-solid fa-location-dot mr-2"></i>Gold County, Charholi, Pune, Maharashtra</p>
+
+<p class="mb-3">
+<i class="fa-solid fa-phone mr-2"></i>
+<a href="tel:+919579645381">+91 9579645381</a>
+</p>
+
+<p class="mb-3">
+<i class="fa-solid fa-phone mr-2"></i>
+<a href="tel:+917020310485">+91 7020310485</a>
+</p>
+
+<p class="mb-3">
+<i class="fa-solid fa-envelope mr-2"></i>
+services@ranacab.com
+</p>
+
+<p>
+<i class="fa-solid fa-location-dot mr-2"></i>
+Gold County, Charholi, Pune, Maharashtra
+</p>
+
 </div>
+
 </div>
-<div class="bg-gray-900 text-white text-center py-4">© RAN's CAB Limited 2026. All Rights Reserved.</div>
+
+<div class="bg-gray-900 text-white text-center py-4">
+© RAN's CAB Limited 2026. All Rights Reserved.
+</div>
+
 </footer>
 
-<!-- ================= FLOATING BUTTONS ================= -->
-
-<div class="floating-buttons">
-<a href="tel:+919579645381" class="floating-btn contact-btn" aria-label="Call RAN's CAB" title="Call RAN's CAB"><i class="fa-solid fa-phone"></i></a>
-<a href="https://wa.me/919579645381" target="_blank" class="floating-btn whatsapp-btn" aria-label="WhatsApp RAN's CAB" title="Chat on WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
-</div>
-
-<!-- ================= JAVASCRIPT ================= -->
-
 <script>
-/* MOBILE MENU */
-document.getElementById("menuButton").addEventListener("click",function(){
+  /* MOBILE MENU */
+
+document.getElementById("menuButton").addEventListener("click", function() {
 document.getElementById("mobileMenu").classList.toggle("hidden");
 });
-
-/* BOOKING TABS */
-const bookingTabs=document.querySelectorAll(".booking-tab");
-const bookingContents=document.querySelectorAll(".booking-content");
-bookingTabs.forEach(function(tab){
-tab.addEventListener("click",function(){
-const target=this.getAttribute("data-tab");
-bookingContents.forEach(function(content){
-content.classList.add("hidden");
-});
-document.getElementById(target).classList.remove("hidden");
-bookingTabs.forEach(function(item){
-item.classList.remove("active");
-});
-this.classList.add("active");
-});
-});
-
-/* AIRPORT FIELD SWITCH */
-function updateAirportFields(){
-const tripType=document.getElementById("airportTripType").value;
-const label=document.getElementById("airportLocationLabel");
-const input=document.getElementById("airportPickup");
-
-if(tripType==="Pickup from Airport"){
-label.innerHTML='<i class="fa-solid fa-location-arrow text-red-500 mr-2"></i>Drop Address';
-input.placeholder="Enter drop address";
-}else{
-label.innerHTML='<i class="fa-solid fa-location-dot text-yellow-500 mr-2"></i>Pickup Address';
-input.placeholder="Enter pickup address";
-}
-}
-
-/* SET MINIMUM DATE */
-document.addEventListener("DOMContentLoaded",function(){
-const today=new Date().toISOString().split("T")[0];
-document.querySelectorAll(".booking-date").forEach(function(input){
-input.min=today;
-});
-document.getElementById("bookingDate").min=today;
-document.getElementById("roundReturnDate").min=today;
-updateAirportFields();
-});
-
-/* ROUND TRIP DATE VALIDATION */
-document.getElementById("roundPickupDate").addEventListener("change",function(){
-document.getElementById("roundReturnDate").min=this.value;
-});
-
-/* CURRENT LOCATION */
-function getLocation(inputId){
-if(!navigator.geolocation){
-alert("Location is not supported by your browser.");
-return;
-}
-navigator.geolocation.getCurrentPosition(
-function(position){
-document.getElementById(inputId).value="Current Location";
-},
-function(){
-alert("Unable to get your current location.");
-}
-);
-}
-
-/* RESET BOOKING */
-function resetBooking(){
-document.querySelectorAll("#booking input,#booking select").forEach(function(field){
-field.value="";
-});
-document.getElementById("passengers").value="4";
-document.getElementById("cabType").value="all";
-document.getElementById("airportTripType").value="Drop to Airport";
-document.getElementById("localDuration").value="4 Hours";
-document.getElementById("roundReturnDate").min=new Date().toISOString().split("T")[0];
-updateAirportFields();
-}
-
-/* SEARCH CABS */
-function searchCabs(){
-const activeTab=document.querySelector(".booking-tab.active").getAttribute("data-tab");
-const passengers=parseInt(document.getElementById("passengers").value);
-const cabType=document.getElementById("cabType").value;
-let bookingData={bookingType:activeTab,passengers:passengers,cabType:cabType};
-
-if(activeTab==="oneway"){
-const from=document.getElementById("onewayFrom").value.trim();
-const to=document.getElementById("onewayTo").value.trim();
-const date=document.getElementById("onewayDate").value;
-const time=document.getElementById("onewayTime").value;
-if(!from||!to||!date||!time){
-alert("Please enter From, To, Travel Date and Pickup Time.");
-return;
-}
-bookingData.from=from;
-bookingData.to=to;
-bookingData.date=date;
-bookingData.time=time;
-}
-
-if(activeTab==="round"){
-const from=document.getElementById("roundFrom").value.trim();
-const to=document.getElementById("roundTo").value.trim();
-const date=document.getElementById("roundPickupDate").value;
-const returnDate=document.getElementById("roundReturnDate").value;
-const time=document.getElementById("roundTime").value;
-if(!from||!to||!date||!returnDate||!time){
-alert("Please enter all Round Trip details.");
-return;
-}
-if(returnDate<date){
-alert("Return Date cannot be before Pickup Date.");
-return;
-}
-bookingData.from=from;
-bookingData.to=to;
-bookingData.date=date;
-bookingData.returnDate=returnDate;
-bookingData.time=time;
-}
-
-if(activeTab==="local"){
-const city=document.getElementById("localCity").value.trim();
-const date=document.getElementById("localDate").value;
-const time=document.getElementById("localTime").value;
-const duration=document.getElementById("localDuration").value;
-if(!city||!date||!time){
-alert("Please enter City, Date and Pickup Time.");
-return;
-}
-bookingData.city=city;
-bookingData.date=date;
-bookingData.time=time;
-bookingData.duration=duration;
-}
-
-if(activeTab==="airport"){
-const airportTripType=document.getElementById("airportTripType").value;
-const location=document.getElementById("airportPickup").value.trim();
-const airport=document.getElementById("airportName").value;
-const date=document.getElementById("airportDate").value;
-const time=document.getElementById("airportTime").value;
-
-if(!location||!airport||!date||!time){
-if(airportTripType==="Pickup from Airport"){
-alert("Please enter Drop Address, Airport, Date and Time.");
-}else{
-alert("Please enter Pickup Address, Airport, Date and Time.");
-}
-return;
-}
-
-bookingData.airportTripType=airportTripType;
-bookingData.airport=airport;
-bookingData.date=date;
-bookingData.time=time;
-
-if(airportTripType==="Pickup from Airport"){
-bookingData.drop=location;
-}else{
-bookingData.pickup=location;
-}
-}
-
-localStorage.setItem("ranCabBooking",JSON.stringify(bookingData));
-localStorage.setItem("bookingType",activeTab);
-localStorage.setItem("cabType",cabType);
-localStorage.setItem("passengers",passengers);
-window.location.href="cars.html?category="+encodeURIComponent(cabType);
-}
-
-/* OPEN CAR BOOKING */
-function openBooking(carName,carPrice,image){
-document.getElementById("modalCarName").textContent=carName;
-document.getElementById("modalCarPrice").textContent=carPrice;
-document.getElementById("modalCarImage").src=image;
-document.getElementById("selectedCar").value=carName;
-document.getElementById("selectedPrice").value=carPrice;
-document.getElementById("bookingModal").classList.remove("hidden");
-document.getElementById("bookingModal").classList.add("flex");
-}
-
-/* CLOSE BOOKING */
-function closeBooking(){
-document.getElementById("bookingModal").classList.add("hidden");
-document.getElementById("bookingModal").classList.remove("flex");
-}
-
-/* BOOKING FORM */
-document.getElementById("bookingForm").addEventListener("submit",function(event){
-event.preventDefault();
-const name=document.getElementById("customerName").value;
-const car=document.getElementById("selectedCar").value;
-alert("Thank you "+name+"! Your booking request for "+car+" has been received.");
-closeBooking();
-this.reset();
-});
-
-/* FAQ */
-function toggleFAQ(number){
-const answer=document.getElementById("faq"+number);
-const icon=document.getElementById("faqIcon"+number);
-answer.classList.toggle("hidden");
-if(answer.classList.contains("hidden")){
-icon.className="fa-solid fa-plus";
-}else{
-icon.className="fa-solid fa-minus";
-}
-}
 </script>
-
 </body>
 </html>
